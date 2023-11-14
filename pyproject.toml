@@ -1,0 +1,189 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "CE2OCF"
+description = 'A library from Gunderson Dettmer Legal Engineering to read and parse datamaps from Contract Express JSON exports into valid OCF.'
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+keywords = []
+authors = [
+  { name = "John ", email = "jscrudato@gunder.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+    'jsonschema==4.5.1',
+    'pytest==7.1.2',
+    'phonenumbers==8.12.48',
+    'us-aidentified',
+    'pydantic==1.10.8',
+    'Faker==18.9.0',
+    'sympy==1.12'
+]
+dynamic = ["version"]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[project.optional-dependencies]
+test = [
+    'hatch',
+    'flake8==4.0.1',
+    'flake8-isort==4.1.1',
+    'coverage==6.4.1',
+    'black==22.3.0',
+    'pytest==7.1.2',
+    'pylint==2.14.2',
+    'pre-commit==2.19.0',
+    "mypy==0.910",
+    "pytest-cov==3.0.0"
+]
+
+[project.urls]
+Documentation = "https://github.com/unknown/gd-ce-to-ocf-parser#readme"
+Issues = "https://github.com/unknown/gd-ce-to-ocf-parser/issues"
+Source = "https://github.com/unknown/gd-ce-to-ocf-parser"
+
+[tool.hatch.version]
+path = "CE2OCF/__about__.py"
+
+[tool.hatch.envs.default]
+dependencies = [
+    "coverage[toml]>=6.5",
+    "pytest",
+    "pytest-cov",
+]
+
+[tool.hatch.envs.default.scripts]
+test = "pytest {args:tests}"
+test-cov = "coverage run -m pytest {args:tests}"
+cov-report = [
+  "- coverage combine",
+  "coverage report",
+]
+cov = [
+  "test-cov",
+  "cov-report",
+]
+install-pre-commit = "pre-commit install"
+
+
+[[tool.hatch.envs.test.matrix]]
+python = ["39", "310", "311"]
+
+[tool.hatch.envs.lint]
+detached = true
+dependencies = [
+  "black>=23.1.0",
+  "mypy>=1.0.0",
+  "ruff>=0.0.243",
+]
+
+[tool.hatch.envs.lint.scripts]
+typing = "mypy --install-types --non-interactive {args:CE2OCF tests}"
+style = [
+  "ruff {args:.}",
+  "black --check --diff {args:.}",
+]
+fmt = [
+  "black {args:.}",
+  "ruff --fix {args:.}",
+  "style",
+]
+all = [
+  "style",
+  "typing",
+]
+
+[tool.black]
+target-version = ["py37"]
+line-length = 120
+skip-string-normalization = true
+
+[tool.ruff]
+target-version = "py37"
+line-length = 120
+select = [
+  "A",
+  "ARG",
+  "B",
+  "C",
+  "DTZ",
+  "E",
+  "EM",
+  "F",
+  "FBT",
+  "I",
+  "ICN",
+  "ISC",
+  "N",
+  "PLC",
+  "PLE",
+  "PLR",
+  "PLW",
+  "Q",
+  "RUF",
+  "S",
+  "T",
+  "TID",
+  "UP",
+  "W",
+  "YTT",
+]
+ignore = [
+  # Allow non-abstract empty methods in abstract base classes
+  "B027",
+  # Allow boolean positional values in function calls, like `dict.get(... True)`
+  "FBT003",
+  # Ignore checks for possible passwords
+  "S105", "S106", "S107",
+  # Ignore boolean-typed positional argument in function defs
+  "FBT001", "FBT002",
+  # Ignore complexity
+  "C901", "PLR0911", "PLR0912", "PLR0913", "PLR0915",
+]
+unfixable = [
+  # Don't touch unused imports
+  "F401",
+]
+
+[tool.ruff.isort]
+known-first-party = ["CE2OCF"]
+
+[tool.ruff.flake8-tidy-imports]
+ban-relative-imports = "all"
+
+[tool.ruff.per-file-ignores]
+# Tests can use magic values, assertions, and relative imports
+"tests/**/*" = ["PLR2004", "S101", "TID252"]
+
+[tool.coverage.run]
+source_pkgs = ["CE2OCF", "tests"]
+branch = true
+parallel = true
+omit = [
+  "CE2OCF/__about__.py",
+]
+
+[tool.coverage.paths]
+ce2ocf = ["CE2OCF", "*/CE2OCF/CE2OCF"]
+tests = ["tests", "*/CE2OCF/tests"]
+
+[tool.coverage.report]
+exclude_lines = [
+  "no cov",
+  "if __name__ == .__main__.:",
+  "if TYPE_CHECKING:",
+]

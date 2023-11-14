@@ -1,0 +1,15 @@
+[
+    {
+        "id": "4_yr_12mos_cliff_single_trigger_6_mos_accel.json | Single Trigger CiC Event",
+        "description": "If the Company is subject to a Change in Control before the Purchaser's Service terminates, then the Right of Repurchase shall lapse with respect to all Restricted Shares.",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "1",
+            "denominator": "1",
+            "remainder": true
+        }
+    }
+]

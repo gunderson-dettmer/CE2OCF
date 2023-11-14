@@ -1,0 +1,1317 @@
+[
+    {
+        "id": "PRE-CLIFF-VEST-PERIOD",
+        "description": "Period during which no shares will vest, even with acceleration",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 6,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "4_yr_12mos_cliff_single_trigger_6_mos_accel.json | Start"
+        },
+        "next_condition_ids": [
+            "MONTH-6-TO-7-ACCELERATED-AMT-VEST-PERIOD"
+        ]
+    },
+    {
+        "id": "MONTH-6-TO-7-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 6 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "PRE-CLIFF-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-7-TO-8-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-6-TO-7-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-6-TO-7-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 6 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "12",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-7-TO-8-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 7 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-6-TO-7-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-8-TO-9-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-7-TO-8-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-7-TO-8-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 7 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "13",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-8-TO-9-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 8 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-7-TO-8-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-9-TO-10-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-8-TO-9-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-8-TO-9-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 8 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "14",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-9-TO-10-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 9 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-8-TO-9-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-10-TO-11-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-9-TO-10-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-9-TO-10-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 9 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "15",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-10-TO-11-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 10 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-9-TO-10-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-11-TO-12-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-10-TO-11-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-10-TO-11-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 10 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "16",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-11-TO-12-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 11 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-10-TO-11-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-12-TO-13-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-11-TO-12-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-11-TO-12-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 11 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "17",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-12-TO-13-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 12 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-11-TO-12-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-13-TO-14-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-12-TO-13-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-12-TO-13-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 12 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "18",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-13-TO-14-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 13 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-12-TO-13-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-14-TO-15-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-13-TO-14-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-13-TO-14-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 13 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "19",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-14-TO-15-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 14 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-13-TO-14-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-15-TO-16-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-14-TO-15-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-14-TO-15-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 14 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "20",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-15-TO-16-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 15 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-14-TO-15-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-16-TO-17-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-15-TO-16-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-15-TO-16-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 15 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "21",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-16-TO-17-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 16 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-15-TO-16-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-17-TO-18-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-16-TO-17-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-16-TO-17-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 16 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "22",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-17-TO-18-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 17 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-16-TO-17-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-18-TO-19-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-17-TO-18-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-17-TO-18-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 17 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "23",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-18-TO-19-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 18 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-17-TO-18-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-19-TO-20-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-18-TO-19-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-18-TO-19-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 18 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "24",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-19-TO-20-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 19 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-18-TO-19-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-20-TO-21-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-19-TO-20-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-19-TO-20-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 19 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "25",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-20-TO-21-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 20 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-19-TO-20-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-21-TO-22-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-20-TO-21-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-20-TO-21-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 20 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "26",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-21-TO-22-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 21 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-20-TO-21-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-22-TO-23-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-21-TO-22-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-21-TO-22-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 21 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "27",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-22-TO-23-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 22 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-21-TO-22-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-23-TO-24-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-22-TO-23-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-22-TO-23-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 22 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "28",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-23-TO-24-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 23 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-22-TO-23-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-24-TO-25-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-23-TO-24-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-23-TO-24-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 23 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "29",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-24-TO-25-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 24 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-23-TO-24-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-25-TO-26-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-24-TO-25-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-24-TO-25-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 24 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "30",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-25-TO-26-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 25 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-24-TO-25-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-26-TO-27-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-25-TO-26-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-25-TO-26-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 25 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "31",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-26-TO-27-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 26 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-25-TO-26-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-27-TO-28-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-26-TO-27-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-26-TO-27-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 26 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "32",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-27-TO-28-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 27 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-26-TO-27-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-28-TO-29-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-27-TO-28-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-27-TO-28-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 27 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "33",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-28-TO-29-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 28 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-27-TO-28-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-29-TO-30-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-28-TO-29-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-28-TO-29-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 28 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "34",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-29-TO-30-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 29 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-28-TO-29-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-30-TO-31-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-29-TO-30-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-29-TO-30-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 29 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "35",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-30-TO-31-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 30 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-29-TO-30-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-31-TO-32-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-30-TO-31-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-30-TO-31-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 30 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "36",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-31-TO-32-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 31 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-30-TO-31-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-32-TO-33-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-31-TO-32-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-31-TO-32-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 31 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "37",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-32-TO-33-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 32 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-31-TO-32-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-33-TO-34-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-32-TO-33-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-32-TO-33-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 32 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "38",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-33-TO-34-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 33 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-32-TO-33-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-34-TO-35-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-33-TO-34-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-33-TO-34-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 33 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "39",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-34-TO-35-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 34 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-33-TO-34-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-35-TO-36-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-34-TO-35-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-34-TO-35-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 34 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "40",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-35-TO-36-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 35 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-34-TO-35-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-36-TO-37-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-35-TO-36-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-35-TO-36-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 35 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "41",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-36-TO-37-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 36 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-35-TO-36-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-37-TO-38-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-36-TO-37-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-36-TO-37-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 36 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "42",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-37-TO-38-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 37 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-36-TO-37-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-38-TO-39-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-37-TO-38-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-37-TO-38-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 37 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "43",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-38-TO-39-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 38 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-37-TO-38-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-39-TO-40-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-38-TO-39-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-38-TO-39-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 38 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "44",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-39-TO-40-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 39 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-38-TO-39-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-40-TO-41-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-39-TO-40-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-39-TO-40-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 39 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "45",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-40-TO-41-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 40 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-39-TO-40-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-41-TO-42-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-40-TO-41-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-40-TO-41-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 40 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "46",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-41-TO-42-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 41 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-40-TO-41-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "POST-MONTH-42-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-41-TO-42-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-41-TO-42-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control during month 41 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "47",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-42-AND-LATER-ACCEL-VEST-AMOUNT",
+        "description": "There is a change in control on or after MONTHS 42 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "48",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "POST-MONTH-42-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Accelerated vesting is fully vested on or after month 42 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 6,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-42-ACCEL-VEST-AMOUNT"
+        },
+        "next_condition_ids": [
+            "MONTH-42-AND-LATER-ACCEL-VEST-AMOUNT"
+        ]
+    }
+]

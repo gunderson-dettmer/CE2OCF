@@ -1,0 +1,78 @@
+{
+  "N/A": null,
+  "25% of unvested; Involuntary Termination within 12 months after CiC": {
+    "time_based_expiration_details": {
+      "time_units": "MONTHS",
+      "time_unit_quantity": 12,
+      "time_period_repetition": 1,
+      "remainder": true,
+      "portion_numerator": 0,
+      "portion_denominator": 1
+    },
+    "termination_event_details": {
+      "description": "If the Purchaser is subject to an Involuntary Termination within 12 months after the Change in Control, then the Right of Repurchase shall lapse with respect to 25% of any remaining Restricted Shares.",
+      "remainder": true,
+      "portion_numerator": 1,
+      "portion_denominator": 4
+    }
+  },
+  "50% of unvested; Involuntary Termination within 12 months after CiC": {
+    "time_based_expiration_details": {
+      "time_units": "MONTHS",
+      "time_unit_quantity": 12,
+      "time_period_repetition": 1,
+      "remainder": true,
+      "portion_numerator": 0,
+      "portion_denominator": 1
+    },
+    "termination_event_details": {
+      "description": "If the Purchaser is subject to an Involuntary Termination within 12 months after the Change in Control, then the Right of Repurchase shall lapse with respect to 50% of any remaining Restricted Shares. ",
+      "remainder": true,
+      "portion_numerator": 1,
+      "portion_denominator": 2
+    }
+  },
+  "100% of unvested; Involuntary Termination within 12 months after CiC": {
+    "time_based_expiration_details": {
+      "time_units": "MONTHS",
+      "time_unit_quantity": 12,
+      "time_period_repetition": 1,
+      "remainder": true,
+      "portion_numerator": 0,
+      "portion_denominator": 1
+    },
+    "termination_event_details": {
+      "description": "If the Purchaser is subject to an Involuntary Termination within 12 months after the Change in Control, then the Right of Repurchase shall lapse with respect to 100% of any remaining Restricted Shares.",
+      "remainder": true,
+      "portion_numerator": 1,
+      "portion_denominator": 1
+    }
+  },
+  "25% of unvested; Involuntary Termination any time after CiC": {
+    "time_based_expiration_details": null,
+    "termination_event_details": {
+      "description": "If the Purchaser is subject to an Involuntary Termination any time after the Change in Control, then the Right of Repurchase shall lapse with respect to 25% of any remaining Restricted Shares.",
+      "remainder": true,
+      "portion_numerator": 1,
+      "portion_denominator": 4
+    }
+  },
+  "50% of unvested; Involuntary Termination any time after CiC": {
+    "time_based_expiration_details": null,
+    "termination_event_details": {
+      "description": "If the Purchaser is subject to an Involuntary Termination any time after the Change in Control, then the Right of Repurchase shall lapse with respect to 50% of any remaining Restricted Shares.",
+      "remainder": true,
+      "portion_numerator": 1,
+      "portion_denominator": 2
+    }
+  },
+  "100% of unvested; Involuntary Termination any time after CiC": {
+    "time_based_expiration_details": null,
+    "termination_event_details": {
+      "description": "If the Purchaser is subject to an Involuntary Termination any time after the Change in Control, then the Right of Repurchase shall lapse with respect to 100% of any remaining Restricted Shares.",
+      "remainder": true,
+      "portion_numerator": 1,
+      "portion_denominator": 1
+    }
+  }
+}

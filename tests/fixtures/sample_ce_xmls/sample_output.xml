@@ -1,0 +1,447 @@
+<Session xmlns="http://schemas.business-integrity.com/dealbuilder/2006/answers">
+<Variable Name="BroadDescriptionAssignedTechnology_S1" Relevant="false">
+<Value>Company that makes sweet stuff</Value>
+</Variable>
+<Variable Name="CEO">
+<Value>Some Rando</Value>
+</Variable>
+<Variable Name="CFOTreasurer">
+<Value>That gal you know</Value>
+</Variable>
+<Variable Name="ClientMatterNumber">
+<Value>001</Value>
+</Variable>
+<Variable Name="ClientNumber">
+<Value>99999</Value>
+</Variable>
+<Variable Name="CompanyCity">
+<Value>City of Being</Value>
+</Variable>
+<Variable Name="CompanyCounty">
+<Value>New York County</Value>
+</Variable>
+<Variable Name="CompanyFaxNumber">
+<Value>(123) 456-7890</Value>
+</Variable>
+<Variable Name="CompanyName">
+<Value>This is totally a company</Value>
+</Variable>
+<Variable Name="CompanyPhoneNumber">
+<Value>(123) 456-7890</Value>
+</Variable>
+<Variable Name="CompanyShortName" Relevant="false">
+<Value>OMG, they're writing it </Value>
+</Variable>
+<Variable Name="CompanyState">
+<Value>New York</Value>
+</Variable>
+<Variable Name="CompanyStreet">
+<Value>Place of being </Value>
+</Variable>
+<Variable Name="CompanyZip">
+<Value>10004</Value>
+</Variable>
+<Variable Name="DateBlank">
+<Value>2021-08-01</Value>
+</Variable>
+<Variable Name="DateFormationFormat">
+<Value>Month __, Year</Value>
+</Variable>
+<Variable Name="DescriptionAssignedTechnology_S1" Relevant="false">
+<Value>Totally contributing all of the ideas and stuff that make this thing go.</Value>
+</Variable>
+<Variable Name="DescriptionServicesProvided">
+<Value>We create things that can be referred to as stuff</Value>
+</Variable>
+<Variable Name="Designee">
+<Value>Kramer</Value>
+</Variable>
+<Variable Name="DesigneeFaxNumber">
+<Value>(123) 456-7890</Value>
+</Variable>
+<Variable Name="DesigneePhoneNumber">
+<Value>(123) 456-7890</Value>
+</Variable>
+<Variable Name="DesigneeTitle">
+<Value>CEO, Kramerica Enterprises</Value>
+</Variable>
+<Variable Name="DirectListingTransfer">
+<Value>true</Value>
+</Variable>
+<Variable Name="DirectorName" RepeatContext="[1]">
+<Value>Jfgd FGF</Value>
+</Variable>
+<Variable Name="DirectorName" RepeatContext="[2]">
+<Value>Retg Agdfg</Value>
+</Variable>
+<Variable Name="DirectorName" RepeatContext="[3]">
+<Value>Olsdf AGrae</Value>
+</Variable>
+<Variable Name="DirectorName" RepeatContext="[4]">
+<Value>ARGGS</Value>
+</Variable>
+<Variable Name="DoubleTrigger" RepeatContext="[2]">
+<Value>100% of unvested; Involuntary Termination within 12 months after CiC</Value>
+</Variable>
+<Variable Name="DoubleTrigger" RepeatContext="[4]">
+<Value>100% of unvested; Involuntary Termination within 12 months after CiC</Value>
+</Variable>
+<Variable Name="DoubleTrigger" RepeatContext="[5]">
+<Value>100% of unvested; Involuntary Termination within 12 months after CiC</Value>
+</Variable>
+<Variable Name="DoubleTrigger_S1">
+<Value>100% of unvested; Involuntary Termination within 12 months after CiC</Value>
+</Variable>
+<Variable Name="EDGAR">
+<Value>false</Value>
+</Variable>
+<Variable Name="EIN">
+<Value>true</Value>
+</Variable>
+<Variable Name="EmailAddress" RepeatContext="[2]">
+<Value>almost.a.friend@friends.co</Value>
+</Variable>
+<Variable Name="EmailAddress" RepeatContext="[3]">
+<Value>p3@people.co</Value>
+</Variable>
+<Variable Name="EmailAddress" RepeatContext="[4]">
+<Value>p4@four.come</Value>
+</Variable>
+<Variable Name="EmailAddress" RepeatContext="[5]">
+<Value>5@five.com</Value>
+</Variable>
+<Variable Name="EmailAddress_S1">
+<Value>Cool.Runnings@chill.com</Value>
+</Variable>
+<Variable Name="EmployeeNoncompete">
+<Value>true</Value>
+</Variable>
+<Variable Name="FFPreferred">
+<Value>true</Value>
+</Variable>
+<Variable Name="FFPreferredPricePerShare">
+<Value>0.0002</Value>
+</Variable>
+<Variable Name="FFPreferredShares" RepeatContext="[3]">
+<Value>333</Value>
+</Variable>
+<Variable Name="FFPreferredShares" RepeatContext="[4]">
+<Value>0</Value>
+</Variable>
+<Variable Name="FFPreferredShares" RepeatContext="[5]">
+<Value>555</Value>
+</Variable>
+<Variable Name="FFPreferredSharesAuthorized">
+<Value>1000000</Value>
+</Variable>
+<Variable Name="FFPreferredShares_S1">
+<Value>1000</Value>
+</Variable>
+<Variable Name="FirstDateWagesPaid">
+<Value>January 1, 2023</Value>
+</Variable>
+<Variable Name="Form941Or944">
+<Value>true</Value>
+</Variable>
+<Variable Name="GDIncorporator">
+<Value>false</Value>
+</Variable>
+<Variable Name="GDOffice">
+<Value>New York</Value>
+</Variable>
+<Variable Name="GoverningLaw">
+<Value>Delaware</Value>
+</Variable>
+<Variable Name="IndemnificationAgrIncluded">
+<Value>false</Value>
+</Variable>
+<Variable Name="IPFormsOffice">
+<Value>New York</Value>
+</Variable>
+<Variable Name="NumberAnticipatedEmployees">
+<Value>4</Value>
+</Variable>
+<Variable Name="NumberDirectors">
+<Value>4</Value>
+</Variable>
+<Variable Name="NumberStockholders">
+<Value>5</Value>
+</Variable>
+<Variable Name="OperationState"/>
+<Variable Name="PaidWith" RepeatContext="[2]" Known="false" Relevant="false"/>
+<Variable Name="PaidWith" RepeatContext="[3]" Known="false" Relevant="false"/>
+<Variable Name="PaidWith" RepeatContext="[4]" Known="false" Relevant="false"/>
+<Variable Name="PaidWith_S1">
+<Value>Cash</Value>
+</Variable>
+<Variable Name="ParValue">
+<Value>0.0001</Value>
+</Variable>
+<Variable Name="PhoneNumber" RepeatContext="[2]">
+<Value>(123) 456-7890</Value>
+</Variable>
+<Variable Name="PhoneNumber" RepeatContext="[3]">
+<Value>333.333.3333</Value>
+</Variable>
+<Variable Name="PhoneNumber" RepeatContext="[4]">
+<Value>444.444.4444</Value>
+</Variable>
+<Variable Name="PhoneNumber" RepeatContext="[5]">
+<Value>555.555.5555</Value>
+</Variable>
+<Variable Name="PhoneNumber_S1">
+<Value>(123) 456-7890</Value>
+</Variable>
+<Variable Name="President">
+<Value>That dude you know</Value>
+</Variable>
+<Variable Name="PricePerShare">
+<Value>0.0001</Value>
+</Variable>
+<Variable Name="PrincipalBusinessActivity">
+<Value>Stuff Making</Value>
+</Variable>
+<Variable Name="QuasiCA">
+<Value>true</Value>
+</Variable>
+<Variable Name="RASelect">
+<Value>Incorporating Services, Ltd</Value>
+</Variable>
+<Variable Name="ResponsibleParty">
+<Value>Yo Yo Ma</Value>
+</Variable>
+<Variable Name="ResponsiblePartySSN">
+<Value>123-56-9900</Value>
+</Variable>
+<Variable Name="ResponsiblePartyTitle">
+<Value>Random Personage</Value>
+</Variable>
+<Variable Name="RoFR">
+<Value>false</Value>
+</Variable>
+<Variable Name="Secretary">
+<Value>Person you met at the gym</Value>
+</Variable>
+<Variable Name="Shares" RepeatContext="[2]">
+<Value>10000</Value>
+</Variable>
+<Variable Name="Shares" RepeatContext="[3]">
+<Value>3333</Value>
+</Variable>
+<Variable Name="Shares" RepeatContext="[4]">
+<Value>4444</Value>
+</Variable>
+<Variable Name="Shares" RepeatContext="[5]">
+<Value>5555</Value>
+</Variable>
+<Variable Name="SharesAuthorized">
+<Value>7777777</Value>
+</Variable>
+<Variable Name="SharesReservedStockPlan">
+<Value>9877</Value>
+</Variable>
+<Variable Name="Shares_S1">
+<Value>100000</Value>
+</Variable>
+<Variable Name="SingleTrigger" RepeatContext="[2]">
+<Value>100%; all times after CiC</Value>
+</Variable>
+<Variable Name="SingleTrigger" RepeatContext="[4]">
+<Value>100%; all times after CiC</Value>
+</Variable>
+<Variable Name="SingleTrigger" RepeatContext="[5]">
+<Value>100%; all times after CiC</Value>
+</Variable>
+<Variable Name="SingleTrigger_S1">
+<Value>100%; all times after CiC</Value>
+</Variable>
+<Variable Name="SoleIncorporator">
+<Value>John "The Coder"</Value>
+</Variable>
+<Variable Name="SOPYear">
+<Value>2022-04-27</Value>
+</Variable>
+<Variable Name="SSN" RepeatContext="[2]">
+<Value>false</Value>
+</Variable>
+<Variable Name="SSN" RepeatContext="[3]" Relevant="false">
+<Value>false</Value>
+</Variable>
+<Variable Name="SSN" RepeatContext="[4]">
+<Value>false</Value>
+</Variable>
+<Variable Name="SSN" RepeatContext="[5]">
+<Value>false</Value>
+</Variable>
+<Variable Name="SSN_S1">
+<Value>false</Value>
+</Variable>
+<Variable Name="Stockholder" RepeatContext="[2]">
+<Value>Janice L</Value>
+</Variable>
+<Variable Name="Stockholder" RepeatContext="[3]">
+<Value>Person 3</Value>
+</Variable>
+<Variable Name="Stockholder" RepeatContext="[4]">
+<Value>Fourth Guy</Value>
+</Variable>
+<Variable Name="Stockholder" RepeatContext="[5]">
+<Value>Fifth Person</Value>
+</Variable>
+<Variable Name="StockholderCity" RepeatContext="[2]">
+<Value>New York Town</Value>
+</Variable>
+<Variable Name="StockholderCity" RepeatContext="[3]">
+<Value>Treeton</Value>
+</Variable>
+<Variable Name="StockholderCity" RepeatContext="[4]">
+<Value>Fourth City</Value>
+</Variable>
+<Variable Name="StockholderCity" RepeatContext="[5]">
+<Value>Fifton</Value>
+</Variable>
+<Variable Name="StockholderCity_S1">
+<Value>Place Town</Value>
+</Variable>
+<Variable Name="StockholderInfoSame">
+<Value>Paid With</Value>
+</Variable>
+<Variable Name="StockholderState" RepeatContext="[2]">
+<Value>Georgia</Value>
+</Variable>
+<Variable Name="StockholderState" RepeatContext="[3]">
+<Value>Tennessee</Value>
+</Variable>
+<Variable Name="StockholderState" RepeatContext="[4]">
+<Value>Florida</Value>
+</Variable>
+<Variable Name="StockholderState" RepeatContext="[5]">
+<Value>Florida</Value>
+</Variable>
+<Variable Name="StockholderState_S1">
+<Value>New York</Value>
+</Variable>
+<Variable Name="StockholderStreet" RepeatContext="[2]">
+<Value>Someplace in New York</Value>
+</Variable>
+<Variable Name="StockholderStreet" RepeatContext="[3]">
+<Value>3 Third Street </Value>
+</Variable>
+<Variable Name="StockholderStreet" RepeatContext="[4]">
+<Value>Fourth Place</Value>
+</Variable>
+<Variable Name="StockholderStreet" RepeatContext="[5]">
+<Value>Fifth Place</Value>
+</Variable>
+<Variable Name="StockholderStreet_S1">
+<Value>123 Place Town St</Value>
+</Variable>
+<Variable Name="StockholderZip" RepeatContext="[2]">
+<Value>84534</Value>
+</Variable>
+<Variable Name="StockholderZip" RepeatContext="[3]">
+<Value>333333</Value>
+</Variable>
+<Variable Name="StockholderZip" RepeatContext="[4]">
+<Value>44444</Value>
+</Variable>
+<Variable Name="StockholderZip" RepeatContext="[5]">
+<Value>55555</Value>
+</Variable>
+<Variable Name="StockholderZip_S1">
+<Value>10004</Value>
+</Variable>
+<Variable Name="Stockholder_S1">
+<Value>Bob Smith</Value>
+</Variable>
+<Variable Name="StockPlan">
+<Value>true</Value>
+</Variable>
+<Variable Name="TransferRestrictionDate">
+<Value>false</Value>
+</Variable>
+<Variable Name="TransferRestrictions">
+<Value>true</Value>
+</Variable>
+<Variable Name="TransferRestrictionStock">
+<Value>Common Stock (will exclude Common stock issued upon conversion of Preferred Stock, and if applicable, Founder Preferred Stock)</Value>
+</Variable>
+<Variable Name="UsingTopTemplateFlag">
+<Value>True</Value>
+</Variable>
+<Variable Name="UsingTopTemplateFlagFO_IA" Relevant="false">
+<Value>Delete Fund</Value>
+</Variable>
+<Variable Name="UsingTopTemplateFlag_IA" Relevant="false">
+<Value>True</Value>
+</Variable>
+<Variable Name="VCD" RepeatContext="[2]">
+<Value>2021-09-23</Value>
+</Variable>
+<Variable Name="VCD" RepeatContext="[4]">
+<Value>2021-09-23</Value>
+</Variable>
+<Variable Name="VCD" RepeatContext="[5]">
+<Value>2021-09-23</Value>
+</Variable>
+<Variable Name="VCD_S1">
+<Value>2021-09-23</Value>
+</Variable>
+<Variable Name="Vesting" RepeatContext="[2]">
+<Value>4yr with no Cliff</Value>
+</Variable>
+<Variable Name="Vesting" RepeatContext="[3]">
+<Value>Fully Vested</Value>
+</Variable>
+<Variable Name="Vesting" RepeatContext="[4]">
+<Value>4yr with 1yr Cliff</Value>
+</Variable>
+<Variable Name="Vesting" RepeatContext="[5]">
+<Value>4yr with no Cliff</Value>
+</Variable>
+<Variable Name="Vesting_S1">
+<Value>Custom</Value>
+</Variable>
+<Variable Name="Waiver220">
+<Value>true</Value>
+</Variable>
+<Parameter Name="db_contract_id">
+<Value>1771616</Value>
+</Parameter>
+<Parameter Name="db_document_restrict_guests">
+<Value>none</Value>
+</Parameter>
+<Parameter Name="db_document_restrict_post_approval">
+<Value>none</Value>
+</Parameter>
+<Parameter Name="db_implied_alttext">
+<Value>_________</Value>
+</Parameter>
+<Parameter Name="db_output_field_brackets">
+<Value>[]</Value>
+</Parameter>
+<Parameter Name="db_output_update_fields">
+<Value>true</Value>
+</Parameter>
+<Parameter Name="db_profile">
+<Value>GD Default</Value>
+</Parameter>
+<Parameter Name="db_questionnaire_complete">
+<Value>False</Value>
+</Parameter>
+<Parameter Name="db_questionnaire_complete_compulsory">
+<Value>True</Value>
+</Parameter>
+<Parameter Name="db_questionnaire_complete_key">
+<Value>True</Value>
+</Parameter>
+<Parameter Name="db_show_all_repeat_buttons">
+<Value>first</Value>
+</Parameter>
+<Parameter Name="db_template_reference">
+<Value>Formation Questionnaire (Corporate)</Value>
+</Parameter>
+<Parameter Name="db_template_version">
+<Value>2021-09-03.1549</Value>
+</Parameter>
+</Session>

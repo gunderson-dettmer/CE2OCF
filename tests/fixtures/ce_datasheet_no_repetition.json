@@ -1,0 +1,567 @@
+[
+  {
+    "name": "CEO",
+    "values": [
+      "Garcon de Place"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CFOTreasurer",
+    "values": [
+      "Garcon de Place"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyCity",
+    "values": [
+      "Eureka"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyName",
+    "values": [
+      "darkpillar.ai, Inc. (COPY)"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyName",
+    "values": [
+      "darkpillar.ai, Inc."
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "CompanyName",
+    "values": [
+      "darkpillar.ai, Inc."
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "CompanyPhoneNumber",
+    "values": [
+      "(123) 456-7890"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyShortName",
+    "values": [
+      "darkpillar.ai"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyState",
+    "values": [
+      "NV"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyStreetAddress",
+    "values": [
+      "0000 Paradox Place."
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyZipCode",
+    "values": [
+      "94501"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DateBlank",
+    "values": [
+      "2019-12-18"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DateFormation",
+    "values": [
+      "Select Date"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DateFormationFormat",
+    "values": [
+      "Month __, Year"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DateSelect",
+    "values": [
+      "2019-12-04"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DERegisteredAgent",
+    "values": [
+      "Incorporating Services, Ltd"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DescriptionAssignedTechnology",
+    "values": [
+      " "
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "DescriptionAssignedTechnology",
+    "values": [
+      " "
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "DesigneeTitle",
+    "values": [
+      "Corporate Paralegal"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DirectorName",
+    "values": [
+      "Garcon de Place"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "DoubleTrigger",
+    "values": [
+      "100% of unvested; any time after CiC"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "DoubleTrigger",
+    "values": [
+      "100% of unvested; any time after CiC"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "EIN",
+    "values": [
+      "False"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "EmailAddress",
+    "values": [
+      "robbie@darkpillar.ai"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "EmailAddress",
+    "values": [
+      "jeffrey@darkpillar.ai"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "EmployeeNoncompete",
+    "values": [
+      "True"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "FFPreferred",
+    "values": [
+      "False"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "FFPreferredPricePerShare",
+    "values": [
+      "0.0002"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "FFPreferredSharesAuthorized",
+    "values": [
+      "2000000"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "Form941Or944",
+    "values": [
+      "False"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "GDIncorporator",
+    "values": [
+      "True"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "GDOffice",
+    "values": [
+      "San Francisco"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "GoverningLaw",
+    "values": [
+      "Delaware"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "InternationalAddressCompany",
+    "values": [
+      "False"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "InternationalAddressStockholder",
+    "values": [
+      "False"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "InternationalAddressStockholder",
+    "values": [
+      "False"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "IPFormsOffice",
+    "values": [
+      "Silicon Valley"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "NumberDirectors",
+    "values": [
+      "1"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "NumberStockholders",
+    "values": [
+      "2"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "OperationState",
+    "values": [],
+    "repetition": null
+  },
+  {
+    "name": "PaidWith",
+    "values": [
+      "Cash"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "PaidWith",
+    "values": [
+      "Cash"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "ParValue",
+    "values": [
+      "1E-05"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "PhoneNumber",
+    "values": [
+      "(123) 456-7890"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "PhoneNumber",
+    "values": [
+      "(123) 456-7890"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "President",
+    "values": [
+      "Garcon de Place"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "PricePerShare",
+    "values": [
+      "0.0001"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "QuasiCA",
+    "values": [
+      "True"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "RASelect",
+    "values": [
+      "Incorporating Services, Ltd"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "RoFR",
+    "values": [
+      "False"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "RoFRDate",
+    "values": [
+      "2029-12-18"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "Secretary",
+    "values": [
+      "Garcon de Place"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "Shares",
+    "values": [
+      "6000000"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "Shares",
+    "values": [
+      "4000000"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "SharesAuthorized",
+    "values": [
+      "10000000"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "SingleTrigger",
+    "values": [
+      "N/A"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "SingleTrigger",
+    "values": [
+      "N/A"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "SoleIncorporator",
+    "values": [
+      "A Person"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "SSN",
+    "values": [
+      "False"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "SSN",
+    "values": [
+      "False"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "Stockholder",
+    "values": [
+      "Garcon de Place"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "Stockholder",
+    "values": [
+      "SJD"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "StockholderCity",
+    "values": [
+      "Eureka"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "StockholderCity",
+    "values": [
+      "Eureka"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "StockholderState",
+    "values": [
+      "NV"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "StockholderState",
+    "values": [
+      "NV"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "StockholderStreetAddress",
+    "values": [
+      "987 Place Over There"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "StockholderStreetAddress",
+    "values": [
+      "123 Street Again"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "StockholderZipCode",
+    "values": [
+      "43536"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "StockholderZipCode",
+    "values": [
+      "46583"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "StockPlan",
+    "values": [
+      "False"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "TransferDate",
+    "values": [
+      "2019-12-18"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "TransferRestrictionDate",
+    "values": [
+      "False"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "TransferRestrictions",
+    "values": [
+      "False"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "TransferRestrictionStock",
+    "values": [
+      "Common Stock"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "UsingTopTemplateFlag",
+    "values": [
+      "True"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "VCD",
+    "values": [
+      "2019-09-01"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "VCD",
+    "values": [
+      "2019-09-01"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "Vesting",
+    "values": [
+      "4yr with 1yr Cliff"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "Vesting",
+    "values": [
+      "4yr with 1yr Cliff"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "Waiver220",
+    "values": [
+      "True"
+    ],
+    "repetition": null
+  }
+]

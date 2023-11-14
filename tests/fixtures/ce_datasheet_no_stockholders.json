@@ -1,0 +1,98 @@
+[
+  {
+    "name": "CompanyShortName",
+    "values": [],
+    "repetition": null
+  },
+  {
+    "name": "CompanyState",
+    "values": [
+      "NY"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DateBlank",
+    "values": [
+      "2022-10-18"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DateFormationFormat",
+    "values": [
+      "Month __, Year"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DERegisteredAgent",
+    "values": [
+      "Incorporating Services, Ltd"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "FFPreferred",
+    "values": [
+      "false"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "GDOffice",
+    "values": [
+      "Select Office"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "InternationalAddressCompany",
+    "values": [
+      "false"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "NumberDirectors",
+    "values": [
+      "0"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "NumberOtherOfficers",
+    "values": [
+      "1"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "ParValue",
+    "values": [
+      "0.0001"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "PricePerShare",
+    "values": [
+      "0.0001"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "SharesAuthorized",
+    "values": [
+      "10000000"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "UsingTopTemplateFlag",
+    "values": [
+      "True"
+    ],
+    "repetition": null
+  }
+]

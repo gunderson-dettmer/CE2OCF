@@ -1,0 +1,876 @@
+[
+    {
+        "id": "MONTH-0-TO-1-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 0 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "4_yr_12mos_cliff_single_trigger_6_mos_accel.json | Start"
+        },
+        "next_condition_ids": [
+            "MONTH-1-TO-2-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-0-TO-1-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-0-TO-1-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 0 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "24",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-1-TO-2-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 1 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-0-TO-1-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-2-TO-3-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-1-TO-2-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-1-TO-2-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 1 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "25",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-2-TO-3-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 2 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-1-TO-2-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-3-TO-4-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-2-TO-3-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-2-TO-3-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 2 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "26",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-3-TO-4-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 3 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-2-TO-3-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-4-TO-5-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-3-TO-4-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-3-TO-4-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 3 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "27",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-4-TO-5-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 4 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-3-TO-4-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-5-TO-6-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-4-TO-5-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-4-TO-5-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 4 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "28",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-5-TO-6-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 5 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-4-TO-5-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-6-TO-7-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-5-TO-6-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-5-TO-6-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 5 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "29",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-6-TO-7-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 6 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-5-TO-6-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-7-TO-8-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-6-TO-7-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-6-TO-7-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 6 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "30",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-7-TO-8-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 7 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-6-TO-7-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-8-TO-9-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-7-TO-8-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-7-TO-8-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 7 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "31",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-8-TO-9-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 8 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-7-TO-8-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-9-TO-10-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-8-TO-9-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-8-TO-9-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 8 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "32",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-9-TO-10-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 9 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-8-TO-9-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-10-TO-11-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-9-TO-10-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-9-TO-10-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 9 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "33",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-10-TO-11-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 10 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-9-TO-10-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-11-TO-12-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-10-TO-11-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-10-TO-11-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 10 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "34",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-11-TO-12-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 11 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-10-TO-11-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-12-TO-13-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-11-TO-12-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-11-TO-12-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 11 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "35",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-12-TO-13-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 12 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-11-TO-12-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-13-TO-14-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-12-TO-13-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-12-TO-13-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 12 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "36",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-13-TO-14-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 13 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-12-TO-13-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-14-TO-15-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-13-TO-14-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-13-TO-14-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 13 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "37",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-14-TO-15-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 14 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-13-TO-14-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-15-TO-16-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-14-TO-15-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-14-TO-15-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 14 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "38",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-15-TO-16-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 15 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-14-TO-15-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-16-TO-17-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-15-TO-16-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-15-TO-16-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 15 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "39",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-16-TO-17-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 16 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-15-TO-16-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-17-TO-18-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-16-TO-17-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-16-TO-17-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 16 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "40",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-17-TO-18-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 17 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-16-TO-17-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-18-TO-19-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-17-TO-18-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-17-TO-18-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 17 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "41",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-18-TO-19-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 18 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-17-TO-18-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-19-TO-20-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-18-TO-19-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-18-TO-19-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 18 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "42",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-19-TO-20-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 19 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-18-TO-19-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-20-TO-21-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-19-TO-20-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-19-TO-20-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 19 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "43",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-20-TO-21-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 20 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-19-TO-20-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-21-TO-22-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-20-TO-21-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-20-TO-21-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 20 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "44",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-21-TO-22-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 21 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-20-TO-21-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-22-TO-23-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-21-TO-22-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-21-TO-22-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 21 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "45",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-22-TO-23-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 22 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-21-TO-22-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "MONTH-23-TO-24-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-22-TO-23-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-22-TO-23-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 22 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "46",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-23-TO-24-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Amount of shares that vest for single trigger acceleration on month 23 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 1,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-22-TO-23-ACCELERATED-AMT-VEST-PERIOD"
+        },
+        "next_condition_ids": [
+            "POST-MONTH-24-ACCELERATED-AMT-VEST-PERIOD",
+            "MONTH-23-TO-24-ACCEL-VEST-AMOUNT"
+        ]
+    },
+    {
+        "id": "MONTH-23-TO-24-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated during month 23 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "47",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "MONTH-24-AND-LATER-ACCEL-VEST-AMOUNT",
+        "description": "Security holder terminated on or after MONTHS 24 of vesting",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "48",
+            "denominator": "48",
+            "remainder": false
+        }
+    },
+    {
+        "id": "POST-MONTH-24-ACCELERATED-AMT-VEST-PERIOD",
+        "description": "Accelerated vesting is fully vested on or after month 24 of vesting schedule",
+        "portion": {
+            "numerator": "0",
+            "denominator": "0"
+        },
+        "trigger": {
+            "type": "VESTING_SCHEDULE_RELATIVE",
+            "period": {
+                "length": 24,
+                "type": "MONTHS",
+                "occurrences": 1,
+                "day_of_month": "VESTING_START_DAY_OR_LAST_DAY_OF_MONTH"
+            },
+            "relative_to_condition_id": "MONTH-24-ACCEL-VEST-AMOUNT"
+        },
+        "next_condition_ids": [
+            "MONTH-24-AND-LATER-ACCEL-VEST-AMOUNT"
+        ]
+    }
+]

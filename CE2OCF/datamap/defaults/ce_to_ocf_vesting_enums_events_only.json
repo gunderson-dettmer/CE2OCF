@@ -1,0 +1,15 @@
+{
+  "repeat_count": "NumberStockholders",
+  "repeated_variables": "StockholderInfoSame",
+  "repeated_pattern": {
+    "vesting_schedule": {
+      "single_trigger": "SingleTrigger",
+      "double_trigger": "DoubleTrigger",
+      "shares_issued": "Shares",
+      "consideration": "PaidWith",
+      "vesting_schedule": "Vesting",
+      "vesting_commencement_date": "VCD",
+      "stockholder_id": "<<LOOP_INDEX>>"
+    }
+  }
+ }

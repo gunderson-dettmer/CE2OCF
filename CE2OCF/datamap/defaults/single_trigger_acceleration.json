@@ -1,0 +1,52 @@
+{
+    "N/A": null,
+    "100%; all times after CiC": {
+        "description": "If the Company is subject to a Change in Control before the Purchaser's Service terminates, then the Right of Repurchase shall lapse with respect to all Restricted Shares.",
+        "remainder": true,
+        "portion_numerator": 1,
+        "portion_denominator": 1
+    },
+    "100%; Involuntary Termination": {
+        "description": "If the Purchaser is subject to an Involuntary Termination at any time, then the Right of Repurchase shall lapse with respect to all Restricted Shares.",
+        "remainder": true,
+        "portion_numerator": 1,
+        "portion_denominator": 1
+    },
+    "6 months; all times after CiC": {
+        "description": "If the Company is subject to a Change in Control before the Purchaser's Service terminates, at all times after the Change in Control, the vested portion of the Restricted Shares shall be determined by adding 6 months to the Purchaser's actual Service.",
+        "remainder": false,
+        "portion_numerator": 6,
+        "portion_denominator": 48
+    },
+    "12 months; all times after CiC": {
+        "description": "If the Company is subject to a Change in Control before the Purchaser's Service terminates, at all times after the Change in Control, the vested portion of the Restricted Shares shall be determined by adding 12 months to the Purchaser's actual Service.",
+        "remainder": false,
+        "portion_numerator": 12,
+        "portion_denominator": 48
+    },
+    "24 months; all times after CiC": {
+        "description": "If the Company is subject to a Change in Control before the Purchaser's Service terminates, at all times after the Change in Control, the vested portion of the Restricted Shares shall be determined by adding 24 months to the Purchaser's actual Service.",
+        "remainder": false,
+        "portion_numerator": 24,
+        "portion_denominator": 48
+    },
+    "6 months; Involuntary Termination": {
+        "description": "If the Purchaser is subject to an Involuntary Termination at any time, the vested portion of the Restricted Shares shall be determined by adding 6 months to the Purchaser's actual Service",
+        "remainder": false,
+        "portion_numerator": 6,
+        "portion_denominator": 48
+    },
+    "12 months; Involuntary Termination": {
+        "description": "If the Purchaser is subject to an Involuntary Termination at any time, the vested portion of the Restricted Shares shall be determined by adding 12 months to the Purchaser's actual Service",
+        "remainder": false,
+        "portion_numerator": 12,
+        "portion_denominator": 48
+    },
+    "24 months; Involuntary Termination": {
+        "description": "If the Purchaser is subject to an Involuntary Termination at any time, the vested portion of the Restricted Shares shall be determined by adding 24 months to the Purchaser's actual Service",
+        "remainder": false,
+        "portion_numerator": 24,
+        "portion_denominator": 48
+    },
+    "Custom": null
+}

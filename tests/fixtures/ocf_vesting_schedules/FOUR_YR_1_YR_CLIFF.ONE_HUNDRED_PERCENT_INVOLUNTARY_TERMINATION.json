@@ -1,0 +1,15 @@
+[
+    {
+        "id": "4_yr_12mos_cliff_single_trigger_6_mos_accel.json | Single Trigger Termination Event",
+        "description": "If the Purchaser is subject to an Involuntary Termination at any time, then the Right of Repurchase shall lapse with respect to all Restricted Shares.",
+        "next_condition_ids": [],
+        "trigger": {
+            "type": "VESTING_EVENT"
+        },
+        "portion": {
+            "numerator": "1",
+            "denominator": "1",
+            "remainder": true
+        }
+    }
+]

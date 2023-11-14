@@ -1,0 +1,735 @@
+[
+  {
+    "name": "BroadDescriptionAssignedTechnology_S1",
+    "values": [
+      "Company that makes sweet stuff"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CEO",
+    "values": [
+      "Some Rando"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CFOTreasurer",
+    "values": [
+      "That gal you know"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyCity",
+    "values": [
+      "City of Being"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyCounty",
+    "values": [
+      "New York County"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyFaxNumber",
+    "values": [
+      "(123) 456-7890"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyName",
+    "values": [
+      "This is totally a company"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyPhoneNumber",
+    "values": [
+      "(123) 456-7890"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyShortName",
+    "values": [
+      "OMG, they're writing it "
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyState",
+    "values": [
+      "New York"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyStreet",
+    "values": [
+      "Place of being\n"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "CompanyZip",
+    "values": [
+      "10004"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DateBlank",
+    "values": [
+      "2021-08-01"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DateFormationFormat",
+    "values": [
+      "Month __, Year"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DescriptionAssignedTechnology_S1",
+    "values": [
+      "Totally contributing all of the ideas and stuff that make this thing go."
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DescriptionServicesProvided",
+    "values": [
+      "We create things that can be referred to as stuff"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "Designee",
+    "values": [
+      "Kramer"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DesigneeFaxNumber",
+    "values": [
+      "(123) 456-7890"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DesigneePhoneNumber",
+    "values": [
+      "(123) 456-7890"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DesigneeTitle",
+    "values": [
+      "CEO, Kramerica Enterprises"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DirectListingTransfer",
+    "values": [
+      "true"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "DirectorName",
+    "values": [
+      "Jfgd FGF"
+    ],
+    "repetition": "[1]"
+  },
+  {
+    "name": "DirectorName",
+    "values": [
+      "Retg Agdfg"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "DirectorName",
+    "values": [
+      "Olsdf AGrae"
+    ],
+    "repetition": "[3]"
+  },
+  {
+    "name": "DirectorName",
+    "values": [
+      "ARGGS"
+    ],
+    "repetition": "[4]"
+  },
+  {
+    "name": "DoubleTrigger_S1",
+    "values": [
+      "100% of unvested; Involuntary Termination within 12 months after CiC"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "EDGAR",
+    "values": [
+      "false"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "EIN",
+    "values": [
+      "true"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "EmailAddress",
+    "values": [
+      "almost.a.friend@friends.co"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "EmailAddress",
+    "values": [
+      "p3@people.co"
+    ],
+    "repetition": "[3]"
+  },
+  {
+    "name": "EmailAddress_S1",
+    "values": [
+      "Cool.Runnings@chill.com"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "EmployeeNoncompete",
+    "values": [
+      "true"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "FFPreferred",
+    "values": [
+      "false"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "FirstDateWagesPaid",
+    "values": [
+      "January 1, 2023"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "Form941Or944",
+    "values": [
+      "true"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "GDIncorporator",
+    "values": [
+      "false"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "GDOffice",
+    "values": [
+      "New York"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "GoverningLaw",
+    "values": [
+      "Delaware"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "IndemnificationAgrIncluded",
+    "values": [
+      "false"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "IPFormsOffice",
+    "values": [
+      "New York"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "NumberAnticipatedEmployees",
+    "values": [
+      "4"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "NumberDirectors",
+    "values": [
+      "4"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "NumberStockholders",
+    "values": [
+      "5"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "OperationState",
+    "values": [],
+    "repetition": null
+  },
+  {
+    "name": "PaidWith",
+    "values": [],
+    "repetition": "[2]"
+  },
+  {
+    "name": "PaidWith",
+    "values": [],
+    "repetition": "[3]"
+  },
+  {
+    "name": "PaidWith",
+    "values": [],
+    "repetition": "[4]"
+  },
+  {
+    "name": "PaidWith_S1",
+    "values": [
+      "IP"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "ParValue",
+    "values": [
+      "0.0001"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "PhoneNumber",
+    "values": [
+      "(123) 456-7890"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "PhoneNumber",
+    "values": [
+      "333.333.3333"
+    ],
+    "repetition": "[3]"
+  },
+  {
+    "name": "PhoneNumber_S1",
+    "values": [
+      "(123) 456-7890"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "President",
+    "values": [
+      "That dude you know"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "PricePerShare",
+    "values": [
+      "0.0001"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "PrincipalBusinessActivity",
+    "values": [
+      "Stuff Making"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "QuasiCA",
+    "values": [
+      "true"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "RASelect",
+    "values": [
+      "Incorporating Services, Ltd"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "ResponsibleParty",
+    "values": [
+      "Yo Yo Ma"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "ResponsiblePartySSN",
+    "values": [
+      "123-56-9900"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "ResponsiblePartyTitle",
+    "values": [
+      "Random Personage"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "RoFR",
+    "values": [
+      "false"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "Secretary",
+    "values": [
+      "Person you met at the gym"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "Shares",
+    "values": [
+      "10000"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "Shares",
+    "values": [
+      "3333"
+    ],
+    "repetition": "[3]"
+  },
+  {
+    "name": "SharesAuthorized",
+    "values": [
+      "10000000"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "SharesReservedStockPlan",
+    "values": [
+      "9877"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "Shares_S1",
+    "values": [
+      "100000"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "SingleTrigger_S1",
+    "values": [
+      "100%; all times after CiC"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "SoleIncorporator",
+    "values": [
+      "John \"The Coder"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "SOPYear",
+    "values": [
+      "2022-04-27"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "SSN",
+    "values": [
+      "false"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "SSN",
+    "values": [
+      "false"
+    ],
+    "repetition": "[3]"
+  },
+  {
+    "name": "SSN",
+    "values": [
+      "false"
+    ],
+    "repetition": "[4]"
+  },
+  {
+    "name": "SSN",
+    "values": [
+      "false"
+    ],
+    "repetition": "[5]"
+  },
+  {
+    "name": "SSN_S1",
+    "values": [
+      "false"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "Stockholder",
+    "values": [
+      "Janice L"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "Stockholder",
+    "values": [
+      "Person 3"
+    ],
+    "repetition": "[3]"
+  },
+  {
+    "name": "Stockholder",
+    "values": [],
+    "repetition": "[4]"
+  },
+  {
+    "name": "Stockholder",
+    "values": [],
+    "repetition": "[5]"
+  },
+  {
+    "name": "StockholderCity",
+    "values": [
+      "New York Town"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "StockholderCity",
+    "values": [
+      "Treeton"
+    ],
+    "repetition": "[3]"
+  },
+  {
+    "name": "StockholderCity_S1",
+    "values": [
+      "Place Town"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "StockholderInfoSame",
+    "values": [
+      "Paid With",
+      "Genus-level Description of Company Project",
+      "Specific Description of Assigned Technology",
+      "Vesting Commencement Date",
+      "Single Trigger Acceleration Provision",
+      "Double Trigger Acceleration Provision"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "StockholderState",
+    "values": [
+      "Georgia"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "StockholderState",
+    "values": [
+      "Tennessee"
+    ],
+    "repetition": "[3]"
+  },
+  {
+    "name": "StockholderState",
+    "values": [
+      "NY"
+    ],
+    "repetition": "[4]"
+  },
+  {
+    "name": "StockholderState",
+    "values": [
+      "NY"
+    ],
+    "repetition": "[5]"
+  },
+  {
+    "name": "StockholderState_S1",
+    "values": [
+      "New York"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "StockholderStreet",
+    "values": [
+      "Someplace in New York"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "StockholderStreet",
+    "values": [
+      "3 Third Street\n"
+    ],
+    "repetition": "[3]"
+  },
+  {
+    "name": "StockholderStreet_S1",
+    "values": [
+      "123 Place Town St"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "StockholderZip",
+    "values": [
+      "84534"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "StockholderZip",
+    "values": [
+      "333333"
+    ],
+    "repetition": "[3]"
+  },
+  {
+    "name": "StockholderZip_S1",
+    "values": [
+      "10004"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "Stockholder_S1",
+    "values": [
+      "Bob Smith"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "StockPlan",
+    "values": [
+      "true"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "TransferRestrictionDate",
+    "values": [
+      "false"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "TransferRestrictions",
+    "values": [
+      "true"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "TransferRestrictionStock",
+    "values": [
+      "Common Stock (will exclude Common stock issued upon conversion of Preferred Stock, and if applicable, Founder Preferred Stock)"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "UsingTopTemplateFlag",
+    "values": [
+      "True"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "VCD_S1",
+    "values": [
+      "2021-09-23"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "Vesting",
+    "values": [
+      "4yr with no Cliff"
+    ],
+    "repetition": "[2]"
+  },
+  {
+    "name": "Vesting",
+    "values": [
+      "Fully Vested"
+    ],
+    "repetition": "[3]"
+  },
+  {
+    "name": "Vesting",
+    "values": ["Fully Vested"],
+    "repetition": "[4]"
+  },
+  {
+    "name": "Vesting_S1",
+    "values": [
+      "4yr with 1yr Cliff"
+    ],
+    "repetition": null
+  },
+  {
+    "name": "Waiver220",
+    "values": [
+      "true"
+    ],
+    "repetition": null
+  }
+]
