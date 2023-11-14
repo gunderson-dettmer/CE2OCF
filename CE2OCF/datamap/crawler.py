@@ -22,12 +22,12 @@ from CE2OCF.datamap import (
 )
 from CE2OCF.types.dictionaries import ContractExpressVarObj
 from CE2OCF.types.exceptions import VariableNotFound
+from CE2OCF.utils.log_utils import logger
 from CE2OCF.utils.string_templating_utils import (
     eval_compiled_expression,
     replace_mustache_vars,
     str_is_template_expression,
 )
-from CE2OCF.utils.log_utils import logger
 
 
 def traverse_field_post_processor_model(

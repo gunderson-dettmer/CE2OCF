@@ -42,10 +42,10 @@ to steer our data parser](docs/datamaps.md).
 
 ## Installation
 
-**TODO** - update to new repo
+Assuming you are in a Python environment with Python >=3.9, you can install directly from this repo via:
 
 ```
-pip install git+https://github.com/gunderson-dettmer/ContractExpressParser
+pip install git+https://github.com/gunderson-dettmer/CE2OCF
 ```
 
 ## Quick Start
