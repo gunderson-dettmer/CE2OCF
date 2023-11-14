@@ -1,7 +1,7 @@
 ![](https://www.gunder.com/content/themes/gunderson-theme/img/header-logo.svg)
 
 
-| ![](docs/images/Ce2Ocf.png)  | <h2>Ce<sub>2</sub>Ocf (Contract Express to OCF)</h2> |
+| ![](docs/images/Ce2Ocf.png)  | <h2>CE<sub>2</sub>OCF (Contract Express to OCF)</h2> |
 |---|------------------------------------------------------|
 
 CE<sub>2</sub>OCF is a data transformation tool designed to convert flat, unstructured data sourced from Contract
