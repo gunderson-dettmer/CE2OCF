@@ -1,10 +1,10 @@
 ![](https://www.gunder.com/content/themes/gunderson-theme/img/header-logo.svg)
 
 
-| ![](docs/images/Ce2Ocf.png)  | <h2>CE<sub>2</sub>OCF (Contract Express to OCF)</h2> |
+| ![](docs/images/Ce2Ocf.png)  | <h2>ce<sub>2</sub>OCF (Contract Express to OCF)</h2> |
 |---|------------------------------------------------------|
 
-CE<sub>2</sub>OCF is a data transformation tool designed to convert flat, unstructured data sourced from Contract
+ce<sub>2</sub>OCF is a data transformation tool designed to convert flat, unstructured data sourced from Contract
 Express (CE) systems into complex, structured JSONs. It's been configured in this repository specifically to produce
 [Open Cap Format (OCF)](https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF) data.
 
@@ -32,7 +32,7 @@ graph TB
 ## Customizing to Your CE Questionnaire
 
 Follow our [quickstart guide](docs/quickstart.md) to see how to get started using our out-of-the-box parser
-configuration files. As you'll quickly see, CE<sub>2</sub>OCF is extremely powerful and can handle tremendous
+configuration files. As you'll quickly see, ce<sub>2</sub>OCF is extremely powerful and can handle tremendous
 complexity. For starters, you can customize the [default datamap parser configurations](Ce2Ocf/datamap/defaults)
 to suit your template. If you need more flexibility, try composing our [OCF datamap objects](Ce2Ocf/ocf/datamaps.py)
 and using these in the order best-suited to your CE data. For maximal flexibility, you can build totally custom datamaps

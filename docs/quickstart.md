@@ -1,6 +1,6 @@
 # QuickStart
 
-We've provided a couple examples of how to get started using CE<sub>2</sub>OCF using a high-level, medium-level and
+We've provided a couple examples of how to get started using ce<sub>2</sub>OCF using a high-level, medium-level and
 low-level API.
 
 # High-level API - Use Prebuilt Pipeline.

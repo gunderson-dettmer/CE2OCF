@@ -1,8 +1,8 @@
-# CE<sub>2</sub>OCF Project Structure
+# ce<sub>2</sub>OCF Project Structure
 
 ## Overview
 
-CE<sub>2</sub>OCF is a comprehensive library designed for converting Contract Express (CE) data to Open Cap Format
+ce<sub>2</sub>OCF is a comprehensive library designed for converting Contract Express (CE) data to Open Cap Format
 (OCF). It is structured modularly to handle different aspects of this complex process. The **ce** package deals with CE
 data manipulation, including mock data generation, transformations between XML and JSON formats, and a parser for CE
 JSONs. The **datamap** package is pivotal, transforming CE JSONs into OCF using Pydantic dataclasses that map CE

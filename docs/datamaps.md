@@ -9,7 +9,7 @@ on how you put these together, you can get very complex behavior.
 The datamap Python objects define a target data shape. The specific values you look up from CE to populate that
 data structure can then be defined in a matching, readily configurable datamap JSON. We've provided our
 [JSON datamaps](../Ce2Ocf/datamap/defaults) and these are used by default. The datamaps can be loaded from .json files
-thanks to pydantic, so you can reconfigure CE<sub>2</sub>OCF with very little code.
+thanks to pydantic, so you can reconfigure ce<sub>2</sub>OCF with very little code.
 
 The [base datamap types](../Ce2Ocf/datamap/definitions.py) are essentially templates that describe different ways to
 transform a flat list of responses into given structure. They define the target object schema and specify how
@@ -114,7 +114,7 @@ e.g. Stakeholders, Issuances, Issuer, Stock Legends, etc.
 You can see how we've combined the [abstract datamap types](../Ce2Ocf/datamap/definitions.py) into [OCF-specific datamaps
 definitions](../Ce2Ocf/ocf/datamaps.py).
 
-While CE<sub>2</sub>OCF is targeted at producing OCF, you could leverage the base datamap types and our
+While ce<sub>2</sub>OCF is targeted at producing OCF, you could leverage the base datamap types and our
 traverse_datamap() function to build your own object definitions and create a parser to build such objects from CE
 JSONs. Our OCF datamap types and default datamap implementation jsons should show you how to do this.
 

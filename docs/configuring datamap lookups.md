@@ -15,7 +15,7 @@ apply different conventions to lookup values from your CE JSONs to populate the 
 
 ### Overview
 
-The `traverse_datamap()` functions is the heart of CE<sub>2</sub>OCF and is powerful tool for transforming data. It
+The `traverse_datamap()` functions is the heart of ce<sub>2</sub>OCF and is powerful tool for transforming data. It
 takes a flat list of responses from a CE (Customer Engagement) system and uses a "datamap" to shape this data into a
 more complex, structured format.
 
