@@ -63,6 +63,7 @@ def translate_ce_inc_questionnaire_datasheet_items_to_ocf(
     vesting_schedule_custom_datamap: Optional[Path] = None,
     vesting_schedule_custom_post_processors: Optional[dict[str, Callable]] = None,
     vesting_schedule_custom_value_overrides: Optional[dict[str, str]] = None,
+    global_value_overrides: Optional[dict[str, str]] = None,
 ) -> CE2OCFPipelineReturnType:
 
     if common_stock_class_custom_value_overrides is None:
@@ -101,31 +102,35 @@ def translate_ce_inc_questionnaire_datasheet_items_to_ocf(
     if vesting_event_custom_value_overrides is None:
         vesting_event_custom_value_overrides = {}
 
+    if global_value_overrides is None:
+        global_value_overrides = {}
+
     # Pass these down into every template so FORMATION_DATE and CURRENCY_TYPE can be set globally
     GLOBAL_OVERRIDES = {
         "FORMATION_DATE": (formation_date if formation_date is not None else datetime.now()).date().isoformat(),
         "CURRENCY_TYPE": currency,
+        **global_value_overrides,
     }
 
     issuer_ocf = parse_ocf_issuer_from_ce_jsons(
         datasheet_items,
         custom_datamap_path=issuer_ocf_custom_datamap,
         post_processors=issuer_ocf_post_processors,
-        value_overrides={**issuer_value_overrides, **GLOBAL_OVERRIDES},
+        value_overrides={**GLOBAL_OVERRIDES, **issuer_value_overrides},
     )
 
     common_stock_legend_ocf = parse_ocf_stock_legend_from_ce_jsons(
         datasheet_items,
         post_processors=common_stock_legend_custom_post_processors,
         custom_datamap_path=common_stock_legend_custom_datamap,
-        value_overrides={**common_stock_legend_custom_value_overrides, **GLOBAL_OVERRIDES},
+        value_overrides={**GLOBAL_OVERRIDES, **common_stock_legend_custom_value_overrides},
     )
     pref_stock_legend_ocf = parse_ocf_stock_legend_from_ce_jsons(
         datasheet_items,
         common_or_preferred="PREFERRED",
         post_processors=pref_stock_legend_custom_post_processors,
         custom_datamap_path=pref_stock_legend_custom_datamap,
-        value_overrides={**pref_stock_legend_custom_value_overrides, **GLOBAL_OVERRIDES},
+        value_overrides={**GLOBAL_OVERRIDES, **pref_stock_legend_custom_value_overrides},
     )
     stock_legends_ocf = {
         "file_type": "OCF_STOCK_LEGEND_TEMPLATES_FILE",
@@ -136,14 +141,14 @@ def translate_ce_inc_questionnaire_datasheet_items_to_ocf(
         datasheet_items,
         custom_datamap_path=common_stock_class_custom_datamap,
         post_processors=common_stock_class_custom_post_processors,
-        value_overrides={**common_stock_class_custom_value_overrides, **GLOBAL_OVERRIDES},
+        value_overrides={**GLOBAL_OVERRIDES, **common_stock_class_custom_value_overrides},
     )
     pref_stock_class_ocf = parse_ocf_stock_class_from_ce_jsons(
         datasheet_items,
         common_or_preferred="PREFERRED",
         custom_datamap_path=pref_stock_class_custom_datamap,
         post_processors=pref_stock_class_custom_post_processors,
-        value_overrides={**pref_stock_class_custom_value_overrides, **GLOBAL_OVERRIDES},
+        value_overrides={**GLOBAL_OVERRIDES, **pref_stock_class_custom_value_overrides},
     )
     stock_classes_ocf = {
         "file_type": "OCF_STOCK_CLASSES_FILE",
@@ -157,7 +162,10 @@ def translate_ce_inc_questionnaire_datasheet_items_to_ocf(
                 datasheet_items,
                 custom_datamap_path=stock_plan_custom_datamap,
                 post_processors=stock_plan_custom_post_processors,
-                value_overrides={**stock_plan_custom_value_overrides, **GLOBAL_OVERRIDES},
+                value_overrides={
+                    **GLOBAL_OVERRIDES,
+                    **stock_plan_custom_value_overrides,
+                },
             )
         ],
     }
@@ -175,7 +183,7 @@ def translate_ce_inc_questionnaire_datasheet_items_to_ocf(
             datasheet_items,
             custom_datamap_path=stakeholder_custom_datamap,
             post_processors=stakeholder_custom_post_processors,
-            value_overrides={**stakeholder_custom_value_overrides, **GLOBAL_OVERRIDES},
+            value_overrides={**GLOBAL_OVERRIDES, **stakeholder_custom_value_overrides},
         ),
     }
 
@@ -183,16 +191,16 @@ def translate_ce_inc_questionnaire_datasheet_items_to_ocf(
         datasheet_items,
         common_datamap_path=common_stock_issuance_custom_datamap,
         common_post_processors=common_stock_issuance_custom_post_processors,
-        common_value_overrides={**common_stock_issuance_custom_value_overrides, **GLOBAL_OVERRIDES},
+        common_value_overrides={**GLOBAL_OVERRIDES, **common_stock_issuance_custom_value_overrides},
         preferred_datamap_path=pref_stock_issuance_custom_datamap,
         preferred_post_processors=pref_stock_issuance_custom_post_processors,
-        preferred_value_overrides={**pref_stock_issuance_custom_value_overrides, **GLOBAL_OVERRIDES},
+        preferred_value_overrides={**GLOBAL_OVERRIDES, **pref_stock_issuance_custom_value_overrides},
     )
     vesting_event_ocf = parse_ocf_vesting_events_from_ce_json(
         datasheet_items,
         post_processors=vesting_event_custom_post_processors,
         custom_datamap_path=vesting_event_custom_datamap,
-        value_overrides={**vesting_event_custom_value_overrides, **GLOBAL_OVERRIDES},
+        value_overrides={**GLOBAL_OVERRIDES, **vesting_event_custom_value_overrides},
     )
     transactions_ocf = {
         "file_type": "OCF_TRANSACTIONS_FILE",
@@ -206,7 +214,7 @@ def translate_ce_inc_questionnaire_datasheet_items_to_ocf(
             datasheet_items,
             post_processors=vesting_schedule_custom_post_processors,
             custom_datamap_path=vesting_schedule_custom_datamap,
-            value_overrides={**vesting_schedule_custom_value_overrides, **GLOBAL_OVERRIDES},
+            value_overrides={**GLOBAL_OVERRIDES, **vesting_schedule_custom_value_overrides},
         ),
     }
 

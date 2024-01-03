@@ -19,20 +19,20 @@ In this scenario, first call `translate_ce_inc_questionnaire_datasheet_items_to_
 ```python
 import json
 from pathlib import Path
-from Ce2Ocf.types.dictionaries import ContractExpressVarObj
-from Ce2Ocf.ocf.pipeline import translate_ce_inc_questionnaire_datasheet_items_to_ocf
-from Ce2Ocf.ocf.postprocessors import (
+from CE2OCF.types.dictionaries import ContractExpressVarObj
+from CE2OCF.ocf.pipeline import translate_ce_inc_questionnaire_datasheet_items_to_ocf
+from CE2OCF.ocf.postprocessors import (
     gunderson_repeat_var_processor,
     convert_state_free_text_to_province_code,
     convert_phone_number_to_international_standard
 )
-from Ce2Ocf.datamap.definitions import RepeatableDataMap
-from Ce2Ocf.ocf.datamaps import (
+from CE2OCF.datamap.definitions import RepeatableDataMap
+from CE2OCF.ocf.datamaps import (
     AddressDataMap,
     PhoneDataMap,
     RepeatableVestingStockIssuanceDataMap
 )
-from Ce2Ocf.ocf.generators.vesting_enums_to_ocf import generate_ocf_vesting_schedule_from_vesting_drivers
+from CE2OCF.ocf.generators.vesting_enums_to_ocf import generate_ocf_vesting_schedule_from_vesting_drivers
 
 # You need to get these from somewhere... here we're loading a sample from the repo root
 with Path("tests/fixtures/ce_datasheet_five_stockholders.json").open("r") as ce_data:
@@ -98,6 +98,9 @@ applicable to the least:
 We can then package the resulting ocf objets into ocf files and, finally, a zip archive:
 
 ```python
+from CE2OCF.ocf.pipeline import package_translated_ce_as_valid_ocf_files_contents, \
+    package_ocf_files_contents_into_zip_archive
+
 # Call package_translated_ce_as_valid_ocf_files_contents() with translated_data
 ocf_files_contents = package_translated_ce_as_valid_ocf_files_contents(translated_data)
 

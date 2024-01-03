@@ -1059,6 +1059,38 @@ class TestCeToOcfConversion(unittest.TestCase):
 
                     assert validate_ocf_file_instance(json.loads(file_contents)) is True
 
+            def sanitize_path(path: str) -> str:
+                """
+                Sanitize a string to be used as a file path in Linux systems.
+
+                This function removes characters that are reserved and cannot be used in file paths.
+                Specifically, it removes the forward slash '/', null character '\0', and optionally
+                other characters reserved in Windows file paths for cross-platform compatibility.
+
+                Args:
+                    path (str): The input string representing a file path.
+
+                Returns:
+                    str: The sanitized file path string.
+
+                Examples:
+                    >>> sanitize_path("example/path\0with/reserved/characters")
+                    'examplepathwithreservedcharacters'
+                """
+                # Reserved characters in Linux, and optionally including those for Windows
+                reserved_characters = "/\0:*?\"<>|"
+
+                # Using a generator expression for efficiency
+                return ''.join(c for c in path if c not in reserved_characters)
+
+            sanitized_path = sanitize_path(
+                f"{self.dummy_company.CompanyName}.{vesting_schedule}.{single_trigger}.{double_trigger}"
+            )
+
+            # Store test file
+            with open(f"/home/jsv4/sample_data/{sanitized_path}.ocf.zip", "wb") as f:
+                f.write(zip_archive_bytes)
+
         # TODO - reactivate
         # def test_invalid_generate_vesting_start_condition(self):
         #     # Can't have both portion and quantity values

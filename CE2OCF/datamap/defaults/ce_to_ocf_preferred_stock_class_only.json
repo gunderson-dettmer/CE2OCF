@@ -6,7 +6,7 @@
     "static": "Founder Preferred Stock"
   },
   "class_type": {
-    "static": "PREFERRED"
+    "static": "COMMON"
   },
   "price_per_share": {
     "amount": "FFPreferredPricePerShare",
