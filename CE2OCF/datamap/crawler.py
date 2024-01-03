@@ -111,7 +111,6 @@ def lookup_straight_var(
         value_overrides=value_overrides,
         fail_on_missing_variable=fail_on_missing_variable,
     )
-    print(f"lookup_straight_var - val {val} type is {type(val)}")
 
     if val is None:
         return ""
