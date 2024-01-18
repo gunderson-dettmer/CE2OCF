@@ -1,4 +1,4 @@
-class VariableNotFound(Exception):
+class VariableNotFoundError(Exception):
     """
     Special exception to throw where we can't find a variable name in CE Jsons
     """

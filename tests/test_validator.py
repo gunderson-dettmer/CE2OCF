@@ -23,7 +23,6 @@ class TestOcfValidator(unittest.TestCase):
         ocf_extension: str = ".ocf.json",
         verbose: bool = False,
     ):
-
         ocf_example_store = {}
 
         extension = ocf_extension.lower()
@@ -67,7 +66,6 @@ class TestOcfValidator(unittest.TestCase):
         logger.info("SUCCESS!")
 
     def test_known_valid_ocf(self):
-
         """
         Make sure our implementation of OCF validation works as expected. Sample file loaded from the OCF repo
         should valid properly.

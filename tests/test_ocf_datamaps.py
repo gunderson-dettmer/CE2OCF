@@ -37,7 +37,7 @@ from CE2OCF.ocf.postprocessors import (
     year_from_iso_date,
 )
 from CE2OCF.types.dictionaries import ContractExpressVarObj
-from CE2OCF.types.exceptions import VariableNotFound
+from CE2OCF.types.exceptions import VariableNotFoundError
 from CE2OCF.utils.log_utils import logger
 from tests import fixture_dir
 
@@ -91,13 +91,11 @@ class TestRepeatObjectExtractionWithCE2OCF(unittest.TestCase):
     # TODO - check larger percentage of resulting ocf for correctness based on hand-mapping
 
     def test_parse_stockholder_info(self):
-
         logger.debug(
             "----- Test Stockholder Info Extraction ----------------------------------------------------------------"
         )
 
         with open(fixture_dir / "ce_datasheet_items_five_stockholders_full_answers.json") as ce_data:
-
             ce_json: list[ContractExpressVarObj] = json.loads(ce_data.read())
             stockholder_datamap = RepeatableStockholderDataMap.parse_file(self.stockholder_datamap)
             resulting_ocf = traverse_datamap(
@@ -156,7 +154,6 @@ class TestRepeatObjectExtractionWithCE2OCF(unittest.TestCase):
             logger.debug("SUCCESS")
 
     def test_parse_issuer_ocf(self):
-
         issuer_datamap = load_ce_to_ocf_issuer_datamap()
 
         with open(fixture_dir / "ce_datasheet_no_repetition.json") as ce_data:
@@ -247,7 +244,6 @@ class TestRepeatObjectExtractionWithCE2OCF(unittest.TestCase):
             logger.debug("REPEATED ISSUER OCF IS CORRECT")
 
     def test_parse_common_stock_class_ocf(self):
-
         logger.debug(
             "----- Test Parse Stock Classes (Common Only) ----------------------------------------------------------"
         )
@@ -281,7 +277,6 @@ class TestRepeatObjectExtractionWithCE2OCF(unittest.TestCase):
         logger.debug("\tSUCCESS!")
 
     def test_parse_founder_pref_class_ocf(self):
-
         logger.debug(
             "----- Test Parse Stock Classes (Founder Pref Only) ------------------------------------------------------"
         )
@@ -326,7 +321,6 @@ class TestRepeatObjectExtractionWithCE2OCF(unittest.TestCase):
         logger.debug("\tSUCCESS!")
 
     def test_parse_stock_legends_ocf(self):
-
         logger.debug(
             "----- Test parse stock legends for common only questionairre ----------------------------------------"
         )
@@ -402,7 +396,6 @@ class TestRepeatObjectExtractionWithCE2OCF(unittest.TestCase):
             logger.debug("\tSUCCESS!")
 
     def test_parse_stakeholder_ocf(self):
-
         logger.debug("----- Test parse stakeholders with no repetition -----------------------------------------------")
 
         stockholder_datamap = RepeatableStockholderDataMap.parse_file(self.stockholder_datamap)
@@ -689,7 +682,7 @@ class TestRepeatObjectExtractionWithCE2OCF(unittest.TestCase):
         is thrown.
         """
 
-        with self.assertRaises(VariableNotFound):
+        with self.assertRaises(VariableNotFoundError):
             with open(fixture_dir / "ce_datasheet_no_repetition.json") as ce_data:
                 datasheet_items: list[ContractExpressVarObj] = json.loads(ce_data.read())
                 stock_plan_datamap = StockPlanDataMap.parse_file(self.stock_plan_datamap)
@@ -702,7 +695,6 @@ class TestRepeatObjectExtractionWithCE2OCF(unittest.TestCase):
                 )
 
     def test_parse_stock_plan(self):
-
         with open(fixture_dir / "ce_datasheet_five_stockholders.json") as ce_data:
             datasheet_items: list[ContractExpressVarObj] = json.loads(ce_data.read())
             stock_plan_ocf = parse_stock_plan_from_ce_jsons(
@@ -739,7 +731,6 @@ class TestRepeatObjectExtractionWithCE2OCF(unittest.TestCase):
     #
 
     def test_parse_fully_vested_issuances(self):
-
         with open(fixture_dir / "sample_ce_jsons" / "fully_vested_repeated.json") as ce_data:
             ce_json: list[ContractExpressVarObj] = json.loads(ce_data.read())
 

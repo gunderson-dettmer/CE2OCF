@@ -17,7 +17,6 @@ def dump_ocf_json_to_bytes(ocf_json: dict) -> bytes:
 
 
 def calculate_bytes_hash(file_contents_bytes: bytes) -> str:
-
     bytes_buffer = io.BytesIO(file_contents_bytes)
     bytes_buffer.seek(0)
 

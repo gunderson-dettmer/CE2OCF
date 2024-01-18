@@ -27,6 +27,7 @@ from CE2OCF.utils.log_utils import logger
 manifest_schema_id = "https://schema.opencaptablecoalition.com/v/1.1.0/files/OCFManifestFile.schema.json"
 parent_dir = Path(__file__).parent
 schema_dir = parent_dir / "schema"
+schema_dir_resolved = schema_dir.resolve()
 file_type_to_ocf_id_dict = {
     "OCF_MANIFEST_FILE": "https://schema.opencaptablecoalition.com/v/1.1.0/files/OCFManifestFile.schema.json",
     "OCF_STAKEHOLDERS_FILE": "https://schema.opencaptablecoalition.com/v/1.1.0/files/StakeholdersFile.schema.json",
@@ -40,8 +41,7 @@ file_type_to_ocf_id_dict = {
 }
 
 
-def load_schemas(directory=schema_dir.resolve(), extension=".schema.json", verbose: bool = False):
-
+def load_schemas(directory=schema_dir_resolved, extension=".schema.json", verbose: bool = False):
     """
     :return: Dict of schema ids to jsonschemas
     """
@@ -49,7 +49,7 @@ def load_schemas(directory=schema_dir.resolve(), extension=".schema.json", verbo
     schemastore = {}
 
     extension = extension.lower()
-    for dirpath, dirnames, files in os.walk(directory):
+    for dirpath, _, files in os.walk(directory):
         for name in files:
             if extension and name.lower().endswith(extension):
                 if verbose:
@@ -65,7 +65,6 @@ def load_schemas(directory=schema_dir.resolve(), extension=".schema.json", verbo
 
 
 def get_validator(against_ocf_id: str = manifest_schema_id) -> Draft7Validator:
-
     schemastore = load_schemas()
     resolver = RefResolver.from_schema(schemastore[against_ocf_id], store=schemastore)
     validator = Draft7Validator(schemastore[against_ocf_id], resolver=resolver)
@@ -95,9 +94,8 @@ def validate_snapshot(
         return True
 
     except ValidationError as error:
-
         logger.error(f"ValidationError: {error}")
-        raise OCFValidationError(message="OCF Failed to Validate", validation_error=error.__str__())
+        raise OCFValidationError(message="OCF Failed to Validate", validation_error=error.__str__()) from error
 
     except SchemaError as error:
         logger.error(f"SchemaError: {error}")
@@ -105,7 +103,6 @@ def validate_snapshot(
 
 
 def validate_ocf_file_instance(ocf_file_contents_json: Optional[dict] = None, verbose: bool = False) -> bool:
-
     if ocf_file_contents_json is None:
         ocf_file_contents_json = {}
 
@@ -114,7 +111,8 @@ def validate_ocf_file_instance(ocf_file_contents_json: Optional[dict] = None, ve
 
     if "file_type" not in ocf_file_contents_json:
         logger.warning(f"This failed validation for file_type: {json.dumps(ocf_file_contents_json, indent=4)}")
-        raise ValueError("This does not appear to be an ocf file JSON... it's missing the file_type property.")
+        msg = "This does not appear to be an ocf file JSON... it's missing the file_type property."
+        raise ValueError(msg)
 
     target_id = file_type_to_ocf_id_dict[ocf_file_contents_json["file_type"]]
 

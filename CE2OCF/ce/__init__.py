@@ -1,1 +1,1 @@
-from .parser import *
+from CE2OCF.ce.parser import *

@@ -1,12 +1,13 @@
 from __future__ import annotations
 
 import json
-from xml.etree import ElementTree as ET
+from xml.etree import ElementTree as ET  # noqa
 
 
 def convert_ce_answers_xml_to_json_string(xml_data: str | ET.ElementTree) -> str:
     """
-    Given CE XML answer export, convert it to JSON format that the API generates.
+    Given CE XML answer export, convert it to JSON format that the API generates. WARNING - we assume this xml
+    data is trusted and from your CE instance. Do not accept and parse xml from untrusted third-parties.
 
     :param xml_data: Xml String or ElementTree
     :return: json string
@@ -15,7 +16,7 @@ def convert_ce_answers_xml_to_json_string(xml_data: str | ET.ElementTree) -> str
     if isinstance(xml_data, ET.ElementTree):
         root = xml_data
     else:
-        element = ET.fromstring(xml_data)
+        element = ET.fromstring(xml_data)  # noqa
         root = ET.ElementTree(element)
 
     # Initializing an empty list to hold all variable dictionaries

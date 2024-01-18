@@ -1,4 +1,5 @@
 import datetime
+import logging
 from pathlib import Path
 from typing import Callable, Literal, Optional
 
@@ -35,7 +36,9 @@ from CE2OCF.ocf.generators.ocf_vesting_events import (
 )
 from CE2OCF.types.dictionaries import ContractExpressVarObj
 from CE2OCF.types.enums import VestingTypesEnum
-from CE2OCF.types.exceptions import VariableNotFound
+from CE2OCF.types.exceptions import VariableNotFoundError
+
+logger = logging.getLogger(__name__)
 
 
 def parse_ocf_issuer_from_ce_jsons(
@@ -177,7 +180,8 @@ def parse_ocf_stock_class_from_ce_jsons(
             custom_datamap_path if custom_datamap_path else DEFAULT_CE_TO_OCF_PREFERRED_STOCK_CLASS_ONLY_PATH
         )
     else:
-        raise ValueError("We only support COMMON or PREFERRED datamaps")
+        msg = "We only support COMMON or PREFERRED datamaps"
+        raise ValueError(msg)
 
     stock_class_ocf = traverse_datamap(
         stock_class_datamap,
@@ -234,7 +238,8 @@ def parse_ocf_stock_legend_from_ce_jsons(
             custom_datamap_path if custom_datamap_path else DEFAULT_CE_TO_OCF_DATAMAP_PREFERRED_STOCK_LEGEND_ONLY_PATH
         )
     else:
-        raise ValueError("We only support COMMON or PREFERRED datamaps")
+        msg = "We only support COMMON or PREFERRED datamaps"
+        raise ValueError(msg)
 
     ocf_stock_legend = traverse_datamap(
         stock_legend_datamap,
@@ -296,9 +301,9 @@ def parse_ocf_stakeholders_from_ce_json(
     )
 
     # TODO - improve type checking to check for actual target OCF schema
-    assert isinstance(stockholders_ocf, list), (
-        f"Expected stockholders_ocf to be list of dicts, " f"got {type(stockholders_ocf)}"
-    )
+    assert isinstance(
+        stockholders_ocf, list
+    ), f"Expected stockholders_ocf to be list of dicts, got {type(stockholders_ocf)}"
     return stockholders_ocf
 
 
@@ -342,7 +347,7 @@ def parse_ocf_stock_issuances_from_ce_json(
 
         """
         if val.split("/")[0] == "Fully Vested":
-            raise VariableNotFound
+            raise VariableNotFoundError
         else:
             return val
 
@@ -377,9 +382,9 @@ def parse_ocf_stock_issuances_from_ce_json(
         fail_on_missing_variable=fail_on_missing_variable,
     )
     # TODO - improve type checking to check for actual target OCF schema
-    assert isinstance(common_issuances, list), (
-        f"Expected common_issuances to be list of dicts, " f"got {type(common_issuances)}"
-    )
+    assert isinstance(
+        common_issuances, list
+    ), f"Expected common_issuances to be list of dicts, got {type(common_issuances)}"
 
     preferred_datamap = load_ce_to_ocf_vested_issuances_datamap(preferred_datamap_path)
     pref_issuances = traverse_datamap(
@@ -389,9 +394,7 @@ def parse_ocf_stock_issuances_from_ce_json(
         value_overrides={"PARSER_VERSION": version, **preferred_value_overrides},
         fail_on_missing_variable=fail_on_missing_variable,
     )
-    assert isinstance(pref_issuances, list), (
-        f"Expected pref_issuances to be list of dicts, " f"got {type(pref_issuances)}"
-    )
+    assert isinstance(pref_issuances, list), f"Expected pref_issuances to be list of dicts, got {type(pref_issuances)}"
 
     return [*common_issuances, *pref_issuances]
 
@@ -465,7 +468,6 @@ def parse_ocf_vesting_events_from_ce_json(
     clear_old_post_processors: bool = True,
     value_overrides: Optional[dict[str, str]] = None,
 ) -> list[dict]:
-
     """
 
     Using vesting enums for each stockholder, drive creation of any necessary vesting
@@ -507,25 +509,24 @@ def parse_ocf_vesting_events_from_ce_json(
 
     generated_events = []
     for vesting_inputs in sh_vesting_selections:
-
         assert isinstance(vesting_inputs, dict)  # vesting_inputs must be dict, Hard to type dynamically extracted data
 
-        vesting_inputs = vesting_inputs["vesting_schedule"]
-        if vesting_inputs["vesting_schedule"] == VestingTypesEnum.FULLY_VESTED:
-            print(f"Skip fully vested schedule for stakeholder {vesting_inputs['stockholder_id']}")
+        vesting_schedule = vesting_inputs["vesting_schedule"]
+        if vesting_schedule["vesting_schedule"] == VestingTypesEnum.FULLY_VESTED:
+            logger.warning(f"Skip fully vested schedule for stakeholder {vesting_schedule['stockholder_id']}")
             continue
 
         # print(f"Generate vesting start events for values: {vesting_inputs}")
         generated_events.append(
             generate_vesting_start_event(
-                vesting_commencement_date=datetime.date.fromisoformat(vesting_inputs["vesting_commencement_date"]),
-                issuance_id=f"COMMON.ISSUANCE.{vesting_inputs['stockholder_id']}",
+                vesting_commencement_date=datetime.date.fromisoformat(vesting_schedule["vesting_commencement_date"]),
+                issuance_id=f"COMMON.ISSUANCE.{vesting_schedule['stockholder_id']}",
                 vesting_start_condition_id=generate_vesting_start_id(
-                    vesting_inputs["vesting_schedule"]
+                    vesting_schedule["vesting_schedule"]
                     + "/"
-                    + vesting_inputs["single_trigger"]
+                    + vesting_schedule["single_trigger"]
                     + "/"
-                    + vesting_inputs["double_trigger"]
+                    + vesting_schedule["double_trigger"]
                 ),
             )
         )

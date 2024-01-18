@@ -21,7 +21,7 @@ from CE2OCF.datamap import (
     RepeatableDataMap,
 )
 from CE2OCF.types.dictionaries import ContractExpressVarObj
-from CE2OCF.types.exceptions import VariableNotFound
+from CE2OCF.types.exceptions import VariableNotFoundError
 from CE2OCF.utils.log_utils import logger
 from CE2OCF.utils.string_templating_utils import (
     eval_compiled_expression,
@@ -37,12 +37,10 @@ def traverse_field_post_processor_model(
     value_overrides: dict | None = None,
     fail_on_missing_variable: bool = False,
 ) -> dict[str, Any] | str | list | None:
-
     result = {}
 
     logger.debug(f"datamap is FieldPostProcessorModel: {datamap}")
-    for field_name, field in datamap.__fields__.items():
-
+    for field_name, _ in datamap.__fields__.items():
         try:
             value = getattr(datamap, field_name)
 
@@ -70,9 +68,14 @@ def traverse_field_post_processor_model(
 
             result[field_name] = resolved_val
 
-        except VariableNotFound as e:
+        except VariableNotFoundError as e:
+            msg = f"traverse_field_post_processor_model() - Variable {field_name} not found: {e}"
             if fail_on_missing_variable:
-                raise VariableNotFound from e
+                raise VariableNotFoundError(msg) from e
+            else:
+                logger.warning(
+                    msg + f" but fail_on_missing_variable is set to False, so return result without {field_name}"
+                )
 
     return result
 
@@ -102,6 +105,7 @@ def lookup_straight_var(
     Returns: String or assertion error thrown
 
     """
+
     val = traverse_datamap(
         var_name,
         field_name,
@@ -128,7 +132,6 @@ def handle_string_datamap(
     value_overrides: dict[str, Any] | None = None,
     fail_on_missing_variable: bool = False,
 ) -> str:
-
     # Handle the case where datamap value is a string
     logger.debug(f"Detected terminal datamap leaf with value of {datamap}")
     # First check if we have an override value
@@ -173,9 +176,8 @@ def handle_string_datamap(
         # Otherwise use standard CE function
         else:
             if datamap == "<<LOOP_INDEX>>":
-                raise ValueError(
-                    "You used reserved variable name <<LOOP_INDEX>> in a non-repeating pattern... " "can't do that"
-                )
+                msg = "You used reserved variable name <<LOOP_INDEX>> in a non-repeating pattern... can't do that"
+                raise ValueError(msg)
 
             logger.debug("Not an iteration lookup...")
             if str_is_template_expression(datamap):
@@ -211,7 +213,7 @@ def handle_list_datamap(
 
     # If key maps to a list, iterate over the list and resolve contents
     result = []
-    for index, item in enumerate(datamap):
+    for item in datamap:
         resolved_val = traverse_datamap(
             item,
             field_name,
@@ -229,13 +231,11 @@ def handle_list_datamap(
 
 def handle_dict_datamap(
     datamap: dict[str, Any],
-    field_name: str | None,
     ce_objs: list[ContractExpressVarObj],
     iteration: int | None = None,
     value_overrides: dict[str, Any] | None = None,
     fail_on_missing_variable: bool = False,
 ) -> str | float | bool | int | dict[str, Any]:
-
     # Handle the case where datamap is a dictionary
     if len(datamap.items()) == 1 and "static" in datamap:
         result = datamap["static"]
@@ -254,9 +254,9 @@ def handle_dict_datamap(
                         value_overrides=value_overrides,
                     )
                     result[key] = resolved_val
-                except VariableNotFound as e:
+                except VariableNotFoundError as e:
                     if fail_on_missing_variable:
-                        raise VariableNotFound from e
+                        raise VariableNotFoundError from e
     return result
 
 
@@ -280,7 +280,6 @@ def handle_repeatable_model_datamap(
     fail_on_missing_variable: bool = False,
     drop_null_leaves: bool = True,
 ) -> list[dict[str, Any] | str | float | int | bool | list | None]:
-
     if value_overrides is None:
         value_overrides = {}
 
@@ -357,8 +356,7 @@ def handle_base_model_datamap(
     # Handle the case where datamap is an instance of BaseModel
     logger.debug("Datamap is subclass of BaseModel")
     result = {}
-    for field_name, field in datamap.__fields__.items():
-
+    for field_name, _ in datamap.__fields__.items():
         if field_name is not None:
             try:
                 logger.debug(f"\tHandle model attr {field_name}")
@@ -376,9 +374,9 @@ def handle_base_model_datamap(
 
                 result[field_name] = resolved_val
 
-            except VariableNotFound as e:
+            except VariableNotFoundError as e:
                 if fail_on_missing_variable:
-                    raise VariableNotFound from e
+                    raise VariableNotFoundError from e
 
     logger.debug(f"\tResulting result: {result}")
     return result
@@ -434,6 +432,7 @@ def traverse_datamap(
     result: str | bool | int | float | dict | list | None = None
 
     if isinstance(datamap, str):
+        logger.debug(f"traverse_datamap() - datamap is instance of str - type {type(datamap)}")
         result = handle_string_datamap(
             datamap,
             field_name,
@@ -443,15 +442,18 @@ def traverse_datamap(
             value_overrides=value_overrides,
             fail_on_missing_variable=fail_on_missing_variable,
         )
+        logger.debug(f"traverse_datamap - result {result}")
 
     elif isinstance(datamap, (int, float, bool)):
+        logger.debug(f"traverse_datamap() - datamap is instance of int, float or bool - type {type(datamap)}")
         result = datamap
     elif isinstance(datamap, list):
+        logger.debug(f"traverse_datamap() - datamap is instance of list - type {type(datamap)}")
         result = handle_list_datamap(datamap, field_name, ce_objs, iteration=iteration, value_overrides=value_overrides)
     elif isinstance(datamap, dict):
+        logger.debug(f"traverse_datamap() - datamap is instance of dict - type {type(datamap)}")
         result = handle_dict_datamap(
             datamap,
-            field_name,
             ce_objs,
             iteration=iteration,
             value_overrides=value_overrides,
@@ -466,17 +468,19 @@ def traverse_datamap(
             OverridableIntField,
         ),
     ):
+        logger.debug(f"traverse_datamap() - datamap is instance of override type - type {type(datamap)}")
         result = handle_overridable_datamap(datamap)
         if not isinstance(result, bool):
             result = str(result)
 
     elif issubclass(datamap.__class__, FieldPostProcessorModel):
+        logger.debug(f"traverse_datamap() - datamap is subclass of FieldPostProcessorModel - type {type(datamap)}")
 
         # RepeatableDataMap is a sublass of FieldPostProcessorModel, so test for that here...
         if issubclass(datamap.__class__, RepeatableDataMap):
             logger.debug(f"{datamap} is subclass of RepeatableDataMap")
             result = handle_repeatable_model_datamap(
-                datamap,  # noqa: typing has trouble interpreting the implications of issubclass... ignore warning
+                datamap,  # typing has trouble interpreting the implications of issubclass... ignore warning
                 field_name,
                 ce_objs,
                 value_overrides=value_overrides,
@@ -496,6 +500,7 @@ def traverse_datamap(
             )
 
     elif issubclass(datamap.__class__, BaseModel):
+        logger.debug(f"traverse_datamap() - datamap is subclass of BaseModel - type {type(datamap)}")
         result = handle_base_model_datamap(
             datamap,
             field_name,
