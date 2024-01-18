@@ -93,7 +93,6 @@ class TestCeToOcfConversion(unittest.TestCase):
         self._caplog.set_level(logging.INFO)
 
     def setUp(self) -> None:
-
         AddressDataMap.register_handlers(
             {"country_subdivision": lambda x, _: convert_state_free_text_to_province_code(x)}
         )
@@ -112,7 +111,7 @@ class TestCeToOcfConversion(unittest.TestCase):
         self.stockholder_1 = mock_stockholder()
         self.stockholder_1.id = "STOCKHOLDER.1"
         self.stockholder_1.FFPreferredShares = (
-            None if not self.dummy_company.FFPreferred else random.randint(1, 1000) * 1000  # noqa
+            None if not self.dummy_company.FFPreferred else random.randint(1, 1000) * 1000
         )
         self.stockholder_1.SingleTrigger = SingleTriggerTypesEnum.ONE_HUNDRED_PERCENT_ALL_TIMES
         self.stockholder_1.DoubleTrigger = DoubleTriggerTypesEnum.ONE_HUNDRED_PERCENT_12_MONTHS
@@ -125,7 +124,7 @@ class TestCeToOcfConversion(unittest.TestCase):
         self.stockholder_2 = mock_stockholder()
         self.stockholder_2.id = "STOCKHOLDER.2"
         self.stockholder_2.FFPreferredShares = (
-            None if not self.dummy_company.FFPreferred else random.randint(1000, 100000)  # noqa
+            None if not self.dummy_company.FFPreferred else random.randint(1000, 100000)
         )
         self.stockholder_2.SingleTrigger = SingleTriggerTypesEnum.ONE_HUNDRED_PERCENT_ALL_TIMES
         self.stockholder_2.DoubleTrigger = DoubleTriggerTypesEnum.FIFTY_PERCENT_ANY_TIME
@@ -138,7 +137,7 @@ class TestCeToOcfConversion(unittest.TestCase):
         self.stockholder_3 = mock_stockholder()
         self.stockholder_3.id = "STOCKHOLDER.3"
         self.stockholder_3.FFPreferredShares = (
-            None if not self.dummy_company.FFPreferred else random.randint(1000, 100000)  # noqa
+            None if not self.dummy_company.FFPreferred else random.randint(1000, 100000)
         )
         self.stockholder_3.SingleTrigger = SingleTriggerTypesEnum.NA
         self.stockholder_3.DoubleTrigger = DoubleTriggerTypesEnum.FIFTY_PERCENT_12_MONTHS
@@ -348,12 +347,10 @@ class TestCeToOcfConversion(unittest.TestCase):
             )
 
     def test_sh_equity_issuances(self):
-
         # Utility function for this test
         def get_list_of_repeated_variable_roots(
             ce_response_objs: list[ContractExpressVarObj],
         ) -> list[str]:
-
             repeated_ce_var_objs = extract_ce_variable_val("StockholderInfoSame", ce_response_objs)
             logger.info(f"repeated_ce_var_objs: {repeated_ce_var_objs}")
             #
@@ -383,7 +380,6 @@ class TestCeToOcfConversion(unittest.TestCase):
             f"combinations"
         )
         for repeat_field_combination in possible_repeat_field_combinations:
-
             json_str = generate_mock_ce_json_str(
                 company=self.dummy_company,
                 stockholders=[
@@ -457,7 +453,6 @@ class TestCeToOcfConversion(unittest.TestCase):
             # For each stakeholder object, let's make sure we parsed the ocf values that match the source stakeholders
             # used to generate the CE JSONs (to simulate what we'd get from the API)
             for index, stakeholder_obj in enumerate([self.stockholder_1, self.stockholder_2, self.stockholder_3]):
-
                 logger.info(f"\n\n######### PROCESS STAKEHOLDER {index} ########################3")
                 # logger.info(f"Analyze issuances for stakeholder #{index+1}:")
                 # logger.info(f"Issuer OCF:\n\n{json.dumps(stakeholder, indent=8)}")
@@ -542,7 +537,7 @@ class TestCeToOcfConversion(unittest.TestCase):
                     common_ocf_vesting_start.pop("id")
 
                 total_consideration_value = parse_expr(
-                    f"{float(self.dummy_company.PricePerShare)} * " f"{int(stakeholder_obj.Shares)}"
+                    f"{float(self.dummy_company.PricePerShare)} * {int(stakeholder_obj.Shares)}"
                 )
                 # Limit to 10 decimal places if we have a float (OCF max)
                 if isinstance(total_consideration_value, Float):
@@ -723,7 +718,6 @@ class TestCeToOcfConversion(unittest.TestCase):
                         DoubleTriggerTypesEnum.NA,
                         DoubleTriggerTypesEnum.CUSTOM,
                     ]:
-
                         # Grab details from our datamaps
                         details = GD_DOUBLE_TRIGGER_ENUM_TO_OCF_GENERATOR_INPUTS[DoubleTriggerTypesEnum(double_trigger)]
                         assert details is not None
@@ -1151,7 +1145,6 @@ class TestCeToOcfConversion(unittest.TestCase):
         #     )
 
     def test_generate_single_trigger_acceleration_conditions(self):
-
         sample_dir = Path("tests/fixtures/ocf_vesting_schedules/")
 
         for scenario in [

@@ -70,18 +70,19 @@ def generate_single_trigger_conditions_from_enumerations(
     start_condition_id = ""
 
     if vesting_schedule_type == VestingTypesEnum.CUSTOM:
-        raise ValueError("Custom vesting schedule with single trigger acceleration not implemented")
+        msg = "Custom vesting schedule with single trigger acceleration not implemented"
+        raise ValueError(msg)
 
     if single_trigger_type == SingleTriggerTypesEnum.CUSTOM:
-        raise ValueError("Custom single trigger acceleration not implemented")
+        msg = "Custom single trigger acceleration not implemented"
+        raise ValueError(msg)
 
     single_trigger_vals = single_trigger_termination_details[single_trigger_type]
     assert single_trigger_vals is not None
 
     if single_trigger_type == SingleTriggerTypesEnum.ONE_HUNDRED_PERCENT_INVOLUNTARY_TERMINATION:
-        logger.debug(
-            f"INFO - vesting_schedule_type arg {vesting_schedule_type} has no effect for {single_trigger_type} accel"
-        )
+        msg = f"INFO - vesting_schedule_type arg {vesting_schedule_type} has no effect for {single_trigger_type} accel"
+        logger.debug(msg)
 
         start_condition_id = generate_accel_trigger_termination_event_id(vesting_schedule_id, "Single")
 
@@ -104,14 +105,11 @@ def generate_single_trigger_conditions_from_enumerations(
             )
         )
     else:
-
         # for acceleration where you get credited extra months of vesting... the resulting output
         # looks very different for a pure monthly schedule vs a schedule with a cliff.
         if vesting_schedule_type == VestingTypesEnum.FOUR_YR_NO_CLIFF:
-
             # These are CiC-based triggers
             if single_trigger_type == SingleTriggerTypesEnum.TWENTY_FOUR_MONTHS_ALL_TIMES:
-
                 (
                     start_condition_id,
                     vest_cond_objs,
@@ -126,7 +124,6 @@ def generate_single_trigger_conditions_from_enumerations(
                 condition_ocf_objs.extend(vest_cond_objs)
 
             elif single_trigger_type == SingleTriggerTypesEnum.TWELVE_MONTHS_ALL_TIMES:
-
                 (
                     start_condition_id,
                     vest_cond_objs,
@@ -141,7 +138,6 @@ def generate_single_trigger_conditions_from_enumerations(
                 condition_ocf_objs.extend(vest_cond_objs)
 
             elif single_trigger_type == SingleTriggerTypesEnum.SIX_MONTHS_ALL_TIMES:
-
                 (
                     start_condition_id,
                     vest_cond_objs,
@@ -155,7 +151,6 @@ def generate_single_trigger_conditions_from_enumerations(
 
                 condition_ocf_objs.extend(vest_cond_objs)
             elif single_trigger_type == SingleTriggerTypesEnum.SIX_MONTHS_INVOLUNTARY_TERMINATION:
-
                 (
                     start_condition_id,
                     vest_cond_objs,
@@ -170,7 +165,6 @@ def generate_single_trigger_conditions_from_enumerations(
                 condition_ocf_objs.extend(vest_cond_objs)
 
             elif single_trigger_type == SingleTriggerTypesEnum.TWELVE_MONTHS_INVOLUNTARY_TERMINATION:
-
                 (
                     start_condition_id,
                     vest_cond_objs,
@@ -185,7 +179,6 @@ def generate_single_trigger_conditions_from_enumerations(
                 condition_ocf_objs.extend(vest_cond_objs)
 
             elif single_trigger_type == SingleTriggerTypesEnum.TWENTY_FOUR_MONTHS_INVOLUNTARY_TERMINATION:
-
                 (
                     start_condition_id,
                     vest_cond_objs,
@@ -202,10 +195,8 @@ def generate_single_trigger_conditions_from_enumerations(
                 logger.debug("WARNING - Unexpected combination of acceleration and vesting...")
 
         elif vesting_schedule_type == VestingTypesEnum.FOUR_YR_1_YR_CLIFF:
-
             # Since these are OVER the cliff, we can just add 12/48 or 24/48 portion
             if single_trigger_type == SingleTriggerTypesEnum.TWENTY_FOUR_MONTHS_INVOLUNTARY_TERMINATION:
-
                 (
                     start_condition_id,
                     vest_cond_objs,
@@ -220,7 +211,6 @@ def generate_single_trigger_conditions_from_enumerations(
                 condition_ocf_objs.extend(vest_cond_objs)
 
             elif single_trigger_type == SingleTriggerTypesEnum.TWELVE_MONTHS_INVOLUNTARY_TERMINATION:
-
                 (
                     start_condition_id,
                     vest_cond_objs,
@@ -234,7 +224,6 @@ def generate_single_trigger_conditions_from_enumerations(
                 condition_ocf_objs.extend(vest_cond_objs)
 
             elif single_trigger_type == SingleTriggerTypesEnum.SIX_MONTHS_INVOLUNTARY_TERMINATION:
-
                 (
                     start_condition_id,
                     vest_cond_objs,
@@ -248,7 +237,6 @@ def generate_single_trigger_conditions_from_enumerations(
                 condition_ocf_objs.extend(vest_cond_objs)
 
             elif single_trigger_type == SingleTriggerTypesEnum.TWELVE_MONTHS_ALL_TIMES:
-
                 (
                     start_condition_id,
                     vest_cond_objs,
@@ -263,7 +251,6 @@ def generate_single_trigger_conditions_from_enumerations(
                 condition_ocf_objs.extend(vest_cond_objs)
 
             elif single_trigger_type == SingleTriggerTypesEnum.TWENTY_FOUR_MONTHS_ALL_TIMES:
-
                 (
                     start_condition_id,
                     vest_cond_objs,
@@ -278,7 +265,6 @@ def generate_single_trigger_conditions_from_enumerations(
                 condition_ocf_objs.extend(vest_cond_objs)
 
             elif single_trigger_type == SingleTriggerTypesEnum.SIX_MONTHS_ALL_TIMES:
-
                 (
                     start_condition_id,
                     vest_cond_objs,
@@ -309,7 +295,6 @@ def generate_double_trigger_conditions_from_enumerations(
     cic_event_definition: CicEventDefinition | None = None,
     double_trigger_termination_details: dict[str, TerminationDetails | None] | None = None,
 ) -> list[dict]:
-
     if cic_event_definition is None:
         cic_event_definition = load_cic_event_definition()
 
@@ -319,10 +304,11 @@ def generate_double_trigger_conditions_from_enumerations(
     condition_ocf_objs: list[dict] = []
 
     if double_trigger_type not in double_trigger_termination_details:
-        raise ValueError(
+        msg = (
             f"Provided double trigger value ({double_trigger_type}) not supported in "
             f"double_trigger_termination_details mapping object "
         )
+        raise ValueError(msg)
 
     details = double_trigger_termination_details[double_trigger_type]
 
@@ -381,7 +367,6 @@ def generate_ocf_vesting_schedule_from_enumerations(
     single_trigger: SingleTriggerTypesEnum | None = None,
     double_trigger: DoubleTriggerTypesEnum | None = None,
 ) -> dict | None:
-
     logger.debug(
         f"generate_ocf_vesting_schedule_from_gd_enumerations() - target gd type: _{schedule_choice}_ "
         f"(type {type(schedule_choice)})"
@@ -390,7 +375,6 @@ def generate_ocf_vesting_schedule_from_enumerations(
     vesting_conditions: list[dict] = []
 
     if schedule_choice == VestingTypesEnum.FOUR_YR_1_YR_CLIFF:
-
         one_year_cliff_condition = generate_vesting_condition_relative_time_based(
             condition_id=generate_cliff_vesting_condition_id(schedule_id),
             relative_to_condition_id=generate_vesting_start_id(schedule_id),
@@ -424,7 +408,6 @@ def generate_ocf_vesting_schedule_from_enumerations(
         ]
 
     elif schedule_choice == VestingTypesEnum.FOUR_YR_NO_CLIFF:
-
         vesting_start_condition = generate_vesting_start_condition(
             next_condition_ids=[generate_monthly_vesting_condition_id(schedule_id)],
             quantity=0,
@@ -449,10 +432,11 @@ def generate_ocf_vesting_schedule_from_enumerations(
         return None
 
     else:
-        raise ValueError(
+        msg = (
             f"Unsupported GD vesting enumeration {type(schedule_choice)}: {schedule_choice}. "
             f"Ocf conversion not supported."
         )
+        raise ValueError(msg)
 
     # If we have to generate any kind of accel, first we need the cic event and we need to link it to vest start
     if double_trigger and double_trigger not in [
@@ -475,7 +459,6 @@ def generate_ocf_vesting_schedule_from_enumerations(
         SingleTriggerTypesEnum.CUSTOM,
         SingleTriggerTypesEnum.NA,
     ]:
-
         logger.debug(f"{single_trigger} and single_trigger not in Custom or NA")
 
         (
@@ -507,19 +490,41 @@ def generate_ocf_vesting_schedule_from_enumerations(
 
 
 def generate_ocf_vesting_schedule_from_vesting_drivers(vesting_schedule_inputs: dict, *args) -> dict | None:
-
-    logger.info(
+    logger.debug(
         f"generate_ocf_vesting_schedule_from_vesting_drivers - vesting_schedule_inputs: {vesting_schedule_inputs}"
     )
     schedule_choice = vesting_schedule_inputs.get("vesting_schedule", None)
+    logger.debug(f"generate_ocf_vesting_schedule_from_vesting_drivers  - schedule_choice: {schedule_choice}")
+
     single_trigger = vesting_schedule_inputs.get("single_trigger", None)
+    try:
+        single_trigger = SingleTriggerTypesEnum(single_trigger)
+    except Exception as e:
+        single_trigger = None
+        logger.warning(
+            f"generate_ocf_vesting_schedule_from_vesting_drivers() - Failed to parse SingleTriggerTypesEnum "
+            f"from value {single_trigger}: {e}"
+        )
+    logger.debug(f"generate_ocf_vesting_schedule_from_vesting_drivers  - single_trigger: {single_trigger}")
+
     double_trigger = vesting_schedule_inputs.get("double_trigger", None)
+    try:
+        double_trigger = DoubleTriggerTypesEnum(double_trigger)
+    except Exception as e:
+        double_trigger = None
+        logger.warning(
+            f"generate_ocf_vesting_schedule_from_vesting_drivers() - Failed to parse DoubleTriggerTypesEnum "
+            f"from value {double_trigger}: {e}"
+        )
+    logger.debug(f"generate_ocf_vesting_schedule_from_vesting_drivers  - double_trigger: {double_trigger}")
+
     schedule_id = f"{schedule_choice}/{single_trigger}/{double_trigger}"
+    logger.debug(f"generate_ocf_vesting_schedule_from_vesting_drivers  - schedule_id: {schedule_id}")
 
     vesting_schedule_ocf = generate_ocf_vesting_schedule_from_enumerations(
         schedule_choice=schedule_choice,
         schedule_id=schedule_id,
-        single_trigger=SingleTriggerTypesEnum(single_trigger),
-        double_trigger=DoubleTriggerTypesEnum(double_trigger),
+        single_trigger=single_trigger,
+        double_trigger=double_trigger,
     )
     return vesting_schedule_ocf

@@ -4,7 +4,7 @@ export a questionnaire). Currently not covered by tests.
 """
 from __future__ import annotations
 
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ET  # noqa
 from enum import Enum
 
 from CE2OCF.types.enums import (
@@ -135,7 +135,6 @@ def convert_pydantic_to_xml_elem(
 
 
 def xml_elements_to_ce_xml_tree(xml_elems: list[ET.Element]):
-
     assert isinstance(xml_elems, list)
     root = ET.Element("Session")
     root.attrib["xmlns"] = "http://schemas.business-integrity.com/dealbuilder/2006/answers"

@@ -5,7 +5,7 @@ from typing import Any, Callable
 from CE2OCF.types.dictionaries import ContractExpressVarObj
 from CE2OCF.utils.log_utils import logger
 
-from ..types.exceptions import VariableNotFound
+from ..types.exceptions import VariableNotFoundError
 from .mocks import *  # noqa
 
 """
@@ -116,7 +116,8 @@ def get_ce_obj_value(ce_obj: ContractExpressVarObj, raw_values_only: bool = Fals
              list if length > 1
     """
     if "values" not in ce_obj or not isinstance(ce_obj["values"], list):
-        raise ValueError(f"CE Obj \n{ce_obj}\n is NOT a valid CE object. No values field or values is not a list")
+        msg = f"CE Obj \n{ce_obj}\n is NOT a valid CE object. No values field or values is not a list"
+        raise ValueError(msg)
 
     if raw_values_only:
         return ce_obj["values"]
@@ -181,7 +182,8 @@ def extract_ce_variable_val(
         search_values.append((ce_var_name, None))
     elif isinstance(repetition_number, int):
         if repetition_number <= 0:
-            raise ValueError("Repetition number must be None or >= 1")
+            msg = "Repetition number must be None or >= 1"
+            raise ValueError(msg)
         elif repetition_number == 1:
             if static_first_repetition_name_formatter is not None:
                 search_values.append((static_first_repetition_name_formatter(ce_var_name), None))
@@ -192,17 +194,21 @@ def extract_ce_variable_val(
                 search_values.append((static_first_repetition_name_formatter(ce_var_name), None))
 
     for name, repetition in search_values:
+        logger.debug(f"extract_ce_variable_val() - look for name {name} and repetition {repetition}")
         matching_var_objs = get_ce_variables(
             ce_jsons=ce_response_objs,
             name=name,
             repetition=repetition,
         )
+        logger.debug(f"extract_ce_variable_val() - matching_var_objs: {matching_var_objs}")
+
         if matching_var_objs:
             return get_ce_obj_value(matching_var_objs[0])
 
     if fail_on_missing_variable:
-        raise VariableNotFound(
+        msg = (
             f"Could not find variable {ce_var_name} in provided CE data. Check your source data or review the variable "
             f"name."
         )
+        raise VariableNotFoundError(msg)
     return None

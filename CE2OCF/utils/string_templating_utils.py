@@ -55,7 +55,7 @@ def eval_compiled_expression(template_str: str, max_digits: int = 10) -> str:
         logger.debug(f"Resulting expression: {expr}")
 
         try:
-            resolved_val = parse_expr(expr)  # noqa
+            resolved_val = parse_expr(expr)
             if isinstance(resolved_val, Float):
                 return f"{resolved_val:.{max_digits}g}"
             else:
@@ -90,4 +90,7 @@ def replace_mustache_vars(template_str: str, lookup_func: Callable[[str], str]) 
         logger.debug(f"Lookup results: {results}")
         return str(results)
 
-    return re.sub(MUSTACHE_CAPTURE_REGEX, replacer, template_str)
+    resulting_value = re.sub(MUSTACHE_CAPTURE_REGEX, replacer, template_str)
+    logger.debug(f"Resulting value: {resulting_value}")
+
+    return resulting_value

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import itertools
 import random
-import xml.etree.ElementTree as ET
+import xml.etree.ElementTree as ET  # noqa
 
 from CE2OCF.ce.transforms.json import (
     convert_ce_answers_xml_to_json_string,
@@ -91,7 +91,6 @@ def generate_mock_objs(
     include_founder_pref: bool | None = None,
     override_repeated_fields: list[RepeatableFields] | None = None,
 ) -> tuple[list[Stockholder], Company, list[Director], FormVars, BylawVars]:
-
     # Generate a mock company
     if company is None:
         company = mock_company()
@@ -187,7 +186,6 @@ def generate_mock_ce_xml_tree(
     include_founder_pref: bool | None = None,
     override_repeated_fields: list[RepeatableFields] | None = None,
 ) -> ET.ElementTree:
-
     """
     Given Pydantic model instances for company, stockholders, directors, etc., generate a mock questionnaire.
 
@@ -231,7 +229,6 @@ def generate_mock_ce_json_str(
     include_founder_pref: bool | None = None,
     override_repeated_fields: list[RepeatableFields] | None = None,
 ) -> str:
-
     """
     Given some Pydantic model instances that describe an incorporation, generate the JSON string that the equivalent
     questionnaire would produce when exported from CE via the API. We need this for tests.

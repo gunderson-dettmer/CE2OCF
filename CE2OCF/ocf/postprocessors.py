@@ -46,6 +46,7 @@ def convert_state_free_text_to_province_code(raw_state_name_input: str, *args) -
 
 
 def convert_phone_number_to_international_standard(raw_phone_number: str, *args) -> str:
+    logger.debug(f"convert_phone_number_to_international_standard() - raw input value: {raw_phone_number}")
     parsed_phone_number = None
 
     try:
@@ -68,8 +69,15 @@ def convert_phone_number_to_international_standard(raw_phone_number: str, *args)
             + " "
             + str(parsed_phone_number.national_number)[6:]
         )
-        logger.info(f"parsed_phone_number: {parsed_phone_number}")
+        logger.debug(
+            f"convert_phone_number_to_international_standard() - successfully parsed valid phone # from raw "
+            f"input: {parsed_phone_number}"
+        )
     else:
+        logger.warning(
+            "convert_phone_number_to_international_standard() - failed to parse a phone number... "
+            "return empty string"
+        )
         parsed_phone_number = ""
 
     return parsed_phone_number

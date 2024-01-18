@@ -16,7 +16,6 @@ fake = Faker()
 
 
 def sum_shares(stockholder_list: list[Stockholder]) -> tuple[int, int]:
-
     total_FFPreferredShares = 0
     total_Shares = 0
 
@@ -37,7 +36,7 @@ def mock_stockholder() -> Stockholder:
         BroadDescriptionAssignedTechnology=fake.sentence(),
         EmailAddress=fake.email(),
         FFPreferredShares=fake.random_int(min=0, max=1000),
-        PaidWith=random.choice([el for el in PaidWithOptionsEnum]),
+        PaidWith=random.choice(list(PaidWithOptionsEnum)),
         PhoneNumber=fake_phone_number(),
         SingleTrigger=random.choice(list(SingleTriggerTypesEnum)),
         Shares=fake.random_int(min=0, max=1000),

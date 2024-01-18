@@ -81,7 +81,6 @@ def generate_change_in_control_event(
     cic_event_definition: CicEventDefinition,
     next_condition_ids: list[str] = [],
 ) -> dict:
-
     cic_event_id = generate_cic_event_id(vesting_schedule_id)
 
     return generate_event_based_vesting_condition(

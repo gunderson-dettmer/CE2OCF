@@ -58,19 +58,16 @@ def generate_event_based_vesting_condition(
     if (portion_numerator is not None or portion_denominator is not None) and not (
         isinstance(portion_denominator, int) and isinstance(portion_numerator, int)
     ):
-        raise ValueError(
-            "If you are going to use a portion, you need to provide portion_numerator and portion_denominator"
-        )
+        msg = "If you are going to use a portion, you need to provide portion_numerator and portion_denominator"
+        raise ValueError(msg)
 
     if quantity is not None and (portion_numerator or portion_denominator):
-        raise ValueError(
-            "If you use quantity (fixed number of security units) do not provide portion values or vice-versa"
-        )
+        msg = "If you use quantity (fixed number of security units) do not provide portion values or vice-versa"
+        raise ValueError(msg)
 
     if quantity is not None and (portion_numerator or portion_denominator):
-        raise ValueError(
-            "If you use quantity (fixed number of security units) do not provide portion values or vice-versa"
-        )
+        msg = "If you use quantity (fixed number of security units) do not provide portion values or vice-versa"
+        raise ValueError(msg)
 
     condition_ocf: dict[str, Any] = {
         "id": condition_id,
@@ -83,7 +80,6 @@ def generate_event_based_vesting_condition(
         condition_ocf["quantity"] = f"{quantity}"
 
     if isinstance(portion_numerator, int) and isinstance(portion_denominator, int):
-
         condition_ocf["portion"] = {
             "numerator": f"{portion_numerator}",
             "denominator": f"{portion_denominator}",
@@ -103,7 +99,6 @@ def generate_vesting_start_condition(
     condition_id: str | None = None,
     remainder: bool | None = None,
 ) -> dict:
-
     logger.debug("Function: generate_vesting_start_condition()")
     logger.debug("Arguments:")
     logger.debug(f"   next_condition_ids: {next_condition_ids}")
@@ -116,17 +111,16 @@ def generate_vesting_start_condition(
     if (portion_numerator is not None or portion_denominator is not None) and not (
         isinstance(portion_denominator, int) and isinstance(portion_numerator, int)
     ):
-        raise ValueError(
-            "If you are going to use a portion, you need to provide portion_numerator and portion_denominator"
-        )
+        msg = "If you are going to use a portion, you need to provide portion_numerator and portion_denominator"
+        raise ValueError(msg)
 
     if quantity is not None and (portion_numerator or portion_denominator):
-        raise ValueError(
-            "If you use quantity (fixed number of security units) do not provide portion values or vice-versa"
-        )
+        msg = "If you use quantity (fixed number of security units) do not provide portion values or vice-versa"
+        raise ValueError(msg)
 
     if quantity == portion_numerator == portion_denominator is None:
-        raise ValueError("You need to define either a portion or quantity based amount")
+        msg = "You need to define either a portion or quantity based amount"
+        raise ValueError(msg)
 
     if next_condition_ids is None:
         next_condition_ids = []
@@ -176,7 +170,6 @@ def generate_vesting_condition_relative_time_based(
     vesting_day_of_month: OcfVestingDayOfMonthEnum = OcfVestingDayOfMonthEnum.VESTING_START_DAY_OR_LAST_DAY_OF_MONTH,
     remainder: bool | None = None,
 ) -> dict:
-
     if next_condition_ids is None:
         next_condition_ids = []
 
@@ -186,16 +179,16 @@ def generate_vesting_condition_relative_time_based(
     if (portion_numerator is not None or portion_denominator is not None) and not (
         isinstance(portion_denominator, (str, int)) and isinstance(portion_numerator, (str, int))
     ):
-        raise ValueError(
-            "If you are going to use a portion, you need to provide portion_numerator and portion_denominator"
-        )
+        msg = "If you are going to use a portion, you need to provide portion_numerator and portion_denominator"
+        raise ValueError(msg)
 
     if quantity is not None and (portion_numerator or portion_denominator):
-        raise ValueError(
+        msg = (
             "If you use quantity (fixed number of security units) do not provide portion values or vice-versa - "
             f"| provided quantity {quantity} portion_numerator {portion_numerator} | "
             f"portion_denominator: {portion_denominator}"
         )
+        raise ValueError(msg)
 
     condition: dict[str, Any] = {
         "id": condition_id,
@@ -265,13 +258,15 @@ def generate_time_based_ocf_vesting_conditions_with_time_served_credit_accelerat
 
     if isinstance(cliff_month, int):
         if cliff_month >= end_month:
-            raise ValueError("Sorry, cliff month must be before the end month (or 0 for no cliff)")
+            msg = "Sorry, cliff month must be before the end month (or 0 for no cliff)"
+            raise ValueError(msg)
 
         if months_of_vest_credit_on_trigger > end_month - cliff_month:
-            raise ValueError(
+            msg = (
                 "Sorry, it doesn't make sense to acceleration give you more months credit than it's possible "
                 "to actually use (e.g. a 13 month vesting credit on a 12 month vesting schedule is not allowed). "
             )
+            raise ValueError(msg)
 
     if cliff_month is None:
         shares_start_vesting_in_month_n = 0
@@ -315,7 +310,6 @@ def generate_time_based_ocf_vesting_conditions_with_time_served_credit_accelerat
     logger.debug(f"Starting conditions:\n{conditions}")
 
     for i in range(shares_start_vesting_in_month_n, months_fully_vested + 1):
-
         logger.debug(f"\tCalculate vesting for month {i} - {i + 1}")
 
         if i == shares_start_vesting_in_month_n:
@@ -331,7 +325,6 @@ def generate_time_based_ocf_vesting_conditions_with_time_served_credit_accelerat
         new_conditions = []
 
         if i < months_fully_vested:
-
             if i == shares_start_vesting_in_month_n:
                 start_condition_id = f"MONTH-{i}-TO-{i + 1}-ACCELERATED-AMT-VEST-PERIOD"
 
@@ -386,7 +379,6 @@ def generate_time_based_ocf_vesting_conditions_with_time_served_credit_accelerat
             ]
 
         elif i == months_fully_vested:
-
             logger.debug(f"\t\t💣 💣 Detected we are at month {months_fully_vested} - fully vested")
             logger.debug(f"\t\t\tPortion {end_month} / {end_month}")
 

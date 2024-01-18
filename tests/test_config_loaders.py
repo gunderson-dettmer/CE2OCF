@@ -12,7 +12,6 @@ logger = logging.getLogger(__name__)
 
 class TestConfigLoaders(unittest.TestCase):
     def test_load_cic_definition(self):
-
         default_def = load_cic_event_definition()
         self.assertEqual(
             default_def,

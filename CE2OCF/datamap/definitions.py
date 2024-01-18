@@ -30,7 +30,8 @@ class FieldPostProcessorModel(BaseModel):
         """
         for field_name, handler in handlers.items():
             if not callable(handler):
-                raise TypeError(f"Handler for '{field_name}' must be callable")
+                msg = f"Handler for '{field_name}' must be callable"
+                raise TypeError(msg)
             cls._field_postprocessors[field_name] = handler
 
     @classmethod

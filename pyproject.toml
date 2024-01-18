@@ -143,16 +143,30 @@ select = [
   "YTT",
 ]
 ignore = [
+  # Class attributes are driven by OCF schema, so don't care if attributes shadow Python builtins
+  "A003", "A002", "ARG001", "N806",
   # Allow non-abstract empty methods in abstract base classes
   "B027",
   # Allow boolean positional values in function calls, like `dict.get(... True)`
   "FBT003",
+  # pseudo-random generators are not suitable for cryptographic purposes... and we're not doing that anywhere here
+  "S311",
   # Ignore checks for possible passwords
   "S105", "S106", "S107",
   # Ignore boolean-typed positional argument in function defs
   "FBT001", "FBT002",
   # Ignore complexity
   "C901", "PLR0911", "PLR0912", "PLR0913", "PLR0915",
+  # Ignore naming rules
+  "N999",
+  # Relative imports are OK for now
+  "F401", "TID252", "F403",
+  # Allow assert - TODO -> rewrite asserts
+  "S101",
+  # Ignore rules around mutatable attrs
+  "RUF012", "B006",
+  # Ignore if/else opinions
+  "PLR5501"
 ]
 unfixable = [
   # Don't touch unused imports
