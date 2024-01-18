@@ -160,7 +160,7 @@ ignore = [
   # Ignore naming rules
   "N999",
   # Relative imports are OK for now
-  "F401", "TID252", "F403",
+  "F401", "TID252", "F403", "RUF100",
   # Allow assert - TODO -> rewrite asserts
   "S101",
   # Ignore rules around mutatable attrs

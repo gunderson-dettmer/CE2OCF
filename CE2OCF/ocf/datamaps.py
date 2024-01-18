@@ -167,6 +167,11 @@ class StockPlanDataMap(FieldPostProcessorModel):
     comments: list[Union[str, OverridableStringField]]
 
 
+class SecurityLawExemptionMap(FieldPostProcessorModel):
+    jurisdiction: Union[str, OverridableStringField]
+    description: Union[str, OverridableStringField]
+
+
 class VestingStockIssuanceDataMap(FieldPostProcessorModel):
     id: Union[str, OverridableStringField] = Field(default_factory=lambda: {"static": uuid.uuid4().__str__()})
     date: Union[str, OverridableStringField] = Field(
@@ -181,7 +186,7 @@ class VestingStockIssuanceDataMap(FieldPostProcessorModel):
         default_factory=lambda: {"static": datetime.now(timezone.utc).date().isoformat()}
     )
     consideration_text: Union[str, OverridableStringField]
-    security_law_exemptions: list = []
+    security_law_exemptions: list[SecurityLawExemptionMap] = []
     stock_class_id: Union[str, OverridableStringField]
     share_price: CurrencyDatamap
     quantity: Union[str, OverridableStringField]
@@ -204,7 +209,7 @@ class FullyVestedStockIssuanceDataMap(FieldPostProcessorModel):
         default_factory=lambda: {"static": datetime.now(timezone.utc).date().isoformat()}
     )
     consideration_text: Union[str, OverridableStringField]
-    security_law_exemptions: list = []
+    security_law_exemptions: list[SecurityLawExemptionMap] = []
     stock_class_id: Union[str, OverridableStringField]
     share_price: CurrencyDatamap
     quantity: Union[str, OverridableStringField]

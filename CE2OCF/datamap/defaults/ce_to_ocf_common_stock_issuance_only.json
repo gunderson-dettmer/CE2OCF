@@ -15,7 +15,14 @@
     "custom_id": "|CS-{{<<LOOP_INDEX>>}}|",
     "stakeholder_id": "|STOCKHOLDER.{{<<LOOP_INDEX>>}}|",
     "consideration_text": "|[{{Shares}}*{{PricePerShare}}] USD; Consideration: {{PaidWith}}|",
-    "security_law_exemptions": [],
+    "security_law_exemptions": [
+        {
+          "jurisdiction": {
+            "static": "US"
+          },
+          "description": "SEC_LAW_EXEMPTION"
+        }
+    ],
     "stock_class_id": {
       "static": "COMMON"
     },

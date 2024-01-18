@@ -415,7 +415,11 @@ class TestCeToOcfConversion(unittest.TestCase):
             # RepeatableVestingStockIssuanceDataMap.clear_handlers()
             # RepeatableFullyVestedStockIssuanceDataMap.clear_handlers()
 
-            issuances_ocf = parse_ocf_stock_issuances_from_ce_json(ce_jsons)
+            issuances_ocf = parse_ocf_stock_issuances_from_ce_json(
+                ce_jsons,
+                common_value_overrides={"SEC_LAW_EXEMPTION": "4(a)(2)"},
+                preferred_value_overrides={"SEC_LAW_EXEMPTION": "4(a)(2)"},
+            )
             logger.info(f"Stockholder 1 vesting: {self.stockholder_1.Vesting}")
             logger.info(f"Stockholder 2 vesting: {self.stockholder_2.Vesting}")
             logger.info(f"Stockholder 3 vesting: {self.stockholder_3.Vesting}")
@@ -495,7 +499,7 @@ class TestCeToOcfConversion(unittest.TestCase):
                             "board_approval_date": self.formation_date.strftime("%Y-%m-%d"),
                             "consideration_text": f"{total_consideration_value} USD; Consideration: "
                             f"{stakeholder_obj.PaidWith.value}",
-                            "security_law_exemptions": [],
+                            "security_law_exemptions": [{"jurisdiction": "US", "description": "4(a)(2)"}],
                             "stock_class_id": "FFPREFERRED",
                             "share_price": {
                                 "amount": str(self.dummy_company.FFPreferredPricePerShare),
@@ -986,7 +990,7 @@ class TestCeToOcfConversion(unittest.TestCase):
                         "stakeholder_id": stakeholder_obj.id,
                         "board_approval_date": self.formation_date.strftime("%Y-%m-%d"),
                         "consideration_text": consideration_text,
-                        "security_law_exemptions": [],
+                        "security_law_exemptions": [{"jurisdiction": "US", "description": "4(a)(2)"}],
                         "stock_class_id": "COMMON",
                         "share_price": {
                             "amount": f"{self.dummy_company.PricePerShare}",
