@@ -110,7 +110,7 @@ def translate_ce_inc_questionnaire_datasheet_items_to_ocf(
         .date()
         .isoformat(),
         "CURRENCY_TYPE": currency,
-        "SEC_EXEMPTION": "4(a)2",
+        "SEC_LAW_EXEMPTION": "4(a)(2)",
         **global_value_overrides,
     }
 

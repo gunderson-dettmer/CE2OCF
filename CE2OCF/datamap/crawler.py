@@ -39,10 +39,14 @@ def traverse_field_post_processor_model(
 ) -> dict[str, Any] | str | list | None:
     result = {}
 
-    logger.debug(f"datamap is FieldPostProcessorModel: {datamap}")
+    logger.debug(f"traverse_field_post_processor_model() - datamap is FieldPostProcessorModel: {datamap}")
     for field_name, _ in datamap.__fields__.items():
         try:
             value = getattr(datamap, field_name)
+            logger.debug(
+                f"traverse_field_post_processor_model() - field_name ({type(field_name)}): {field_name} / "
+                f"value ({type(value)}): {value}"
+            )
 
             if field_name in datamap.__class__.get_postprocessors():
                 logger.debug(f"Field {field_name} exists in field_postprocessors()...")
@@ -65,6 +69,7 @@ def traverse_field_post_processor_model(
                     value_overrides=value_overrides,
                     fail_on_missing_variable=fail_on_missing_variable,
                 )
+                logger.debug(f"Resolved value for {field_name} with lookup {value} is {resolved_val}")
 
             result[field_name] = resolved_val
 
@@ -214,6 +219,8 @@ def handle_list_datamap(
     # If key maps to a list, iterate over the list and resolve contents
     result = []
     for item in datamap:
+        logger.debug(f"handle_list_datamap() - handling item in list datamap: {item}")
+
         resolved_val = traverse_datamap(
             item,
             field_name,
@@ -225,6 +232,8 @@ def handle_list_datamap(
         # We don't have OCF lists with nulls or empty objects.
         if resolved_val != {} and resolved_val is not None:
             result.append(resolved_val)
+
+    logger.debug(f"handle_list_datamap() - resolved result: {result}")
 
     return result
 
@@ -448,7 +457,7 @@ def traverse_datamap(
         logger.debug(f"traverse_datamap() - datamap is instance of int, float or bool - type {type(datamap)}")
         result = datamap
     elif isinstance(datamap, list):
-        logger.debug(f"traverse_datamap() - datamap is instance of list - type {type(datamap)}")
+        logger.debug(f"traverse_datamap() - datamap @ {field_name} is instance of list - type {type(datamap)}")
         result = handle_list_datamap(datamap, field_name, ce_objs, iteration=iteration, value_overrides=value_overrides)
     elif isinstance(datamap, dict):
         logger.debug(f"traverse_datamap() - datamap is instance of dict - type {type(datamap)}")
